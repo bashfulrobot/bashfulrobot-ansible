@@ -88,6 +88,8 @@
       - budgie-window-shuffler
       - pulseaudio
       - pavucontrol
+      - budgie-calendar-applet
+      - budgie-network-applet
 
 - name: Autoremove and Purge APT Packages
   apt:
