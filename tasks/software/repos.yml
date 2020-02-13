@@ -23,3 +23,8 @@
   apt_repository:
     repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
     state: present
+
+- name: Add NordVPN PPA
+  apt_repository:
+    repo: deb https://repo.nordvpn.com/deb/nordvpn/debian stable main
+    state: present
