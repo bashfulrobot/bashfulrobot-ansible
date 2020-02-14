@@ -33,3 +33,23 @@
   apt_repository:
     repo: deb https://repo.nordvpn.com/deb/nordvpn/debian stable main
     state: present
+
+- name: Add sirikali APT signing Keys
+  apt_key:
+    url: https://download.opensuse.org/repositories/home:obs_mhogomchungu/xUbuntu_19.10/Release.key
+    state: present
+
+- name: Add sirikali PPA
+  apt_repository:
+    repo: deb http://download.opensuse.org/repositories/home:/obs_mhogomchungu/xUbuntu_19.10/ /
+    state: present
+
+- name: Add insynchq APT signing Keys
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: ACCAF35C
+
+- name: Add insynchq PPA
+  apt_repository:
+    repo: deb http://apt.insync.io/ubuntu {{ansible_distribution_release}} non-free contrib
+    state: present

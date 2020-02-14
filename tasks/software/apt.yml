@@ -89,7 +89,10 @@
       - pulseaudio
       - pavucontrol
       - nordvpn
-
+      - gocryptfs
+      - sirikali
+      - insync
+      - insync-nemo
 - name: Autoremove and Purge APT Packages
   apt:
     autoremove: yes
