@@ -9,7 +9,7 @@
 - name: Placing Ncspot CFG
   copy:
     src: files/dotfiles/ncspot/config.toml
-    dest: "/home/{{ myusername }}/snap/current/.config/ncspot/config.toml"
+    dest: "/home/{{ myusername }}/snap/ncspot/current/.config/ncspot/config.toml"
     owner: "{{ myusername }}"
     group: "{{ myusername }}"
     mode: 0700
