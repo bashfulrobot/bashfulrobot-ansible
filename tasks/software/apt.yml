@@ -90,6 +90,7 @@
       - pavucontrol
       - budgie-calendar-applet
       - budgie-network-applet
+      - gocryptfs
 
 - name: Autoremove and Purge APT Packages
   apt:
