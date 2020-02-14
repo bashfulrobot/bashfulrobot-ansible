@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Software Dependencies
-neededSoftware=( software-properties-common ansible dialog git )
+neededSoftware=(software-properties-common ansible dialog git)
 
 # These application vars are set here to avoid a chicken/egg scenario
 
@@ -12,7 +12,7 @@ APT=$(which apt)
 
 # Check if software is installed and install with APT if needed.
 function checkInstalled() {
-$DPKG -s "$1" 2>/dev/null >/dev/null || sudo $APT -y install "$1"
+  $DPKG -s "$1" 2>/dev/null >/dev/null || sudo $APT -y install "$1"
 }
 
 # Update APT Repos of older than 12 hours
@@ -21,11 +21,10 @@ if [ -z "$(find /var/cache/apt/pkgcache.bin -mmin -720)" ]; then
 fi
 
 # Install Software if needed
-for sw in "${neededSoftware[@]}"
-  do
-    checkInstalled "$sw"
-  done
-  
+for sw in "${neededSoftware[@]}"; do
+  checkInstalled "$sw"
+done
+
 ### SCRIPT VARS
 
 # These application vars are set after software deps are met
@@ -56,6 +55,8 @@ function deployLocal() {
     mkdir -p $MYLOCBASE
     cd $MYLOCBASE
     $GIT clone $MYREPORMT
+    cd $MYREPO
+    git remote set-url origin git@github.com:bashfulrobot/bashfulrobot-ansible
   else
     cd $MYREPO
     # Get the latest version if exists.
@@ -69,8 +70,8 @@ function deployLocal() {
 # Setup Ansible CFG
 if [ ! -f $HOME/.ansible.cfg ]; then
   touch $HOME/.ansible.cfg
-  echo '[defaults]' > $HOME/.ansible.cfg
-  echo 'remote_tmp     = /tmp/$USER/ansible' >> $HOME/.ansible.cfg
+  echo '[defaults]' >$HOME/.ansible.cfg
+  echo 'remote_tmp     = /tmp/$USER/ansible' >>$HOME/.ansible.cfg
 fi
 
 # Build Menu
@@ -82,40 +83,40 @@ TITLE="Ansible Deploy"
 MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Local Repo Deploy All"
-         2 "Local Repo Deploy ZSH"
-         3 "Remote Repo Deploy All"
-         4 "Local Repo Test Script")
+  2 "Local Repo Deploy ZSH"
+  3 "Remote Repo Deploy All"
+  4 "Local Repo Test Script")
 
 CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
+  --backtitle "$BACKTITLE" \
+  --title "$TITLE" \
+  --menu "$MENU" \
+  $HEIGHT $WIDTH $CHOICE_HEIGHT \
+  "${OPTIONS[@]}" \
+  2>&1 >/dev/tty)
 
 clear
 
 case $CHOICE in
-        1)
-            echo "Running $MYREPO/local.yml"
-            MYYAML="$MYREPO/local.yml"
-            deployLocal
-            ;;
-        2)
-            echo "Running $MYREPO/local-test.yml"
-            MYYAML="$MYREPO/local-test.yml"
-            deployLocal
-            ;;
-        3)
-            echo "Running ansible-pull from $MYREPORMT"
-            $APULL -U $MYREPORMT
-            ;;
-        4)
-            echo "Running $MYREPO/local-test.yml"
-            MYYAML="$MYREPO/local-test.yml"
-            deployLocal
-            ;;
+1)
+  echo "Running $MYREPO/local.yml"
+  MYYAML="$MYREPO/local.yml"
+  deployLocal
+  ;;
+2)
+  echo "Running $MYREPO/local-test.yml"
+  MYYAML="$MYREPO/local-test.yml"
+  deployLocal
+  ;;
+3)
+  echo "Running ansible-pull from $MYREPORMT"
+  $APULL -U $MYREPORMT
+  ;;
+4)
+  echo "Running $MYREPO/local-test.yml"
+  MYYAML="$MYREPO/local-test.yml"
+  deployLocal
+  ;;
 esac
 
 exit 0
