@@ -15,3 +15,27 @@
     name: user.name
     scope: global
     value: 'bashfulrobot'
+
+- name: Set GIT Merge Tool
+  git_config:
+    name: merge.tool
+    scope: global
+    value: code-insiders
+
+- name: Set GIT mergetool.vscode.cmd
+  git_config:
+    name: mergetool.vscode.cmd
+    scope: global
+    value: "code-insiders --wait $MERGED"
+
+- name: Set GIT diff.tool
+  git_config:
+    name: diff.tool
+    scope: global
+    value: code-insiders
+
+- name: Set GIT difftool.vscode.cmd
+  git_config:
+    name: difftool.vscode.cmd
+    scope: global
+    value: "code-insiders --wait --diff $LOCAL $REMOTE"
