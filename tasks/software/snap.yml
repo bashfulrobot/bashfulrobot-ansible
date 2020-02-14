@@ -3,6 +3,7 @@
   with_items:
     - spotify
     - lxd
+    - ncspot
     - simplescreenrecorder
     - bitwarden
     - bw
