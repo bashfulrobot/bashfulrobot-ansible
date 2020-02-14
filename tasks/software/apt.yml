@@ -88,9 +88,7 @@
       - budgie-window-shuffler
       - pulseaudio
       - pavucontrol
-      - budgie-calendar-applet
-      - budgie-network-applet
-      - gocryptfs
+      - nordvpn
 
 - name: Autoremove and Purge APT Packages
   apt:
