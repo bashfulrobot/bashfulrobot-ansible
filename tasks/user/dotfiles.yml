@@ -37,3 +37,11 @@
     owner: "{{ myusername }}"
     group: "{{ myusername }}"
     mode: 0700
+
+- name: Placing nord.json tilix Theme
+  copy:
+    src: files/dotfiles/tilix/nord.json
+    dest: "/usr/share/tilix/schemes/nord.json"
+    owner: "root"
+    group: "root"
+    mode: 0644
