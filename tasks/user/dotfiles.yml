@@ -38,6 +38,14 @@
     group: "{{ myusername }}"
     mode: 0700
 
+- name: Placing .mk-sbuild.rc
+  copy:
+    src: files/dotfiles/sbuild/.mk-sbuild.rc
+    dest: "/home/{{ myusername }}/.mk-sbuild.rc"
+    owner: "{{ myusername }}"
+    group: "{{ myusername }}"
+    mode: 0700
+
 - name: Placing nord.json tilix Theme
   copy:
     src: files/dotfiles/tilix/nord.json
