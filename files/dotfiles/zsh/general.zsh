@@ -7,7 +7,7 @@
 # - Note this is a custom theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Support additional terminal 
+# Support additional terminal
 export TERM=xterm-256color
 
 # Daily updates - default is every 2 weeks
@@ -18,6 +18,10 @@ ENABLE_CORRECTION="true"
 
 # Go Settings
 export GO111MODULE=on
+
+# dch Settings for ubuntu packaging
+export DEBFULLNAME="Dustin Krysak"
+export DEBEMAIL="dustin@bashfulrobot.com"
 
 # https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-3-install-awesome-powerline-fonts
 #POWERLEVEL9K_MODE='awesome-patched'
