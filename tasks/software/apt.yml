@@ -93,6 +93,7 @@
       - sirikali
       - insync
       - insync-nemo
+      - preload
 - name: Autoremove and Purge APT Packages
   apt:
     autoremove: yes
