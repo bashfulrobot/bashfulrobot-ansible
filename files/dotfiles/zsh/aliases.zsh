@@ -10,6 +10,8 @@ alias e='code-insiders -r'
 alias e-rust='code-insiders -r --extensions-dir /home/dustin/Documents/devel/vscode/profiles/rust/extensions --user-data-dir /home/dustin/Documents/devel/vscode/profiles/rust/user-data'
 alias e-go='code-insiders -r --extensions-dir /home/dustin/Documents/devel/vscode/profiles/go/extensions --user-data-dir /home/dustin/Documents/devel/vscode/profiles/go/user-data'
 alias e-vala='code-insiders -r --extensions-dir /home/dustin/Documents/devel/vscode/profiles/vala/extensions --user-data-dir /home/dustin/Documents/devel/vscode/profiles/vala/user-data'
+alias e-ansible='code-insiders -r --extensions-dir /home/dustin/Documents/devel/vscode/profiles/ansible/extensions --user-data-dir /home/dustin/Documents/devel/vscode/profiles/ansible/user-data'
+
 
 alias opermissions="stat -c '%A %a %n'"
 alias octperm="stat -c '%A %a %n'"
