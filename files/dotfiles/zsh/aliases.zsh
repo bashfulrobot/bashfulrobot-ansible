@@ -7,6 +7,7 @@ alias pcp='rsync -aP'
 alias cfg-pull='ansible-pull -U https://github.com/bashfulrobot/bashfulrobot-ansible.git'
 
 alias e='code-insiders -r'
+alias e-rust='code-insiders -r --extensions-dir /home/dustin/Documents/devel/vscode/profiles/rust/extensions --user-data-dir /home/dustin/Documents/devel/vscode/profiles/rust/user-data'
 
 alias opermissions="stat -c '%A %a %n'"
 alias octperm="stat -c '%A %a %n'"
