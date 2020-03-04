@@ -27,12 +27,10 @@
     - snapcraft
     - snapdiff
     - slack
+    - code-insiders
 
 - name: Install Node Snap Package
   command: "snap install node --channel=11/stable --classic"
-
-- name: Install code-insiders Snap Package
-  command: "snap install code-insiders --classic"
 
 - name: Install Multipass Snap Package
   command: "snap install multipass --beta --classic"
