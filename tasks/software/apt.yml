@@ -82,7 +82,6 @@
       - lazygit
       - encfs
       - graphviz
-      - code-insiders
       - cpufrequtils
       - budgie-applications-menu
       - budgie-window-shuffler

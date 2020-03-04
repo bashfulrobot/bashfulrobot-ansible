@@ -13,15 +13,15 @@
   apt_repository:
     repo: deb http://archive.canonical.com/ubuntu {{ansible_distribution_release}} partner
     state: present
-- name: Add Microsoft APT signing Keys
-  apt_key:
-    url: https://packages.microsoft.com/keys/microsoft.asc
-    state: present
+# - name: Add Microsoft APT signing Keys
+#   apt_key:
+#     url: https://packages.microsoft.com/keys/microsoft.asc
+#     state: present
 
-- name: Add Vscode Microsoft PPA
-  apt_repository:
-    repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
-    state: present
+# - name: Add Vscode Microsoft PPA
+#   apt_repository:
+#     repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+#     state: present
 
 - name: Add NordVPN APT signing Keys
   apt_key:
