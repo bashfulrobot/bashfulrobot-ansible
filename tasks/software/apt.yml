@@ -11,6 +11,7 @@
       - plank
       - geary
       - gnome-screenshot
+      - code-insiders
 
 - name: Autoremove and Purge APT Packages
   apt:
