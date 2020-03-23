@@ -1,29 +1,39 @@
+- name: Remove SNAP Packages
+  snap:
+    name: "{{ remsnaps }}"
+    state: absent
+  vars:
+    remsnaps:
+      - hiri
+      - croc
+      - polar-bookshelf
+
 - name: Install Snap Packages
-  command: 'snap install "{{ item }}"'
-  with_items:
-    - spotify
-    - lxd
-    - ncspot
-    - simplescreenrecorder
-    - bitwarden
-    - bw
-    - icdiff
-    - mumble
-    - shfmt
-    - hiri
-    - review-tools
-    - croc
-    - standard-notes
-    - scrcpy
-    - htmldoc
-    - polar-bookshelf
-    - mailspring
-    - libreoffice
-    - ephemeral
-    - glimpse-editor
-    - gravit-designer
+  snap:
+    name:
+      - spotify
+      - lxd
+      - ncspot
+      - simplescreenrecorder
+      - bitwarden
+      - bw
+      - icdiff
+      - mumble
+      - shfmt
+      - review-tools
+      - standard-notes
+      - scrcpy
+      - htmldoc
+      - mailspring
+      - libreoffice
+      - ephemeral
+      - glimpse-editor
+      - gravit-designer
+
 - name: Install Classic Snap Packages
-  command: 'snap install "{{ item }}" --classic'
+  snap:
+    name: "{{ item }}"
+    classic: yes
   with_items:
     - go
     - restic
@@ -32,13 +42,24 @@
     - slack
     - code-insiders
 
-- name: Install Node Snap Package
-  command: "snap install node --channel=11/stable --classic"
+- name: Install Node Snap Package --channel=11/stable --classic
+  snap:
+    name: node
+    channel: 11/stable
+    classic: yes
 
-- name: Install Multipass Snap Package
-  command: "snap install multipass --beta --classic"
+- name: Install Multipass Snap Package --channel=beta --classic
+  snap:
+    name: multipass
+    channel: beta
+    classic: yes
 
-- name: Install IRCCLOUD Desktop Snap Package
-  command: "snap install irccloud --edge"
-- name: Install Hugo Extended
-  command: "snap install hugo --channel=extended/edge"
+- name: Install IRCCLOUD Desktop Snap Package --channel=edge
+  snap:
+    name: irccloud
+    channel: edge
+
+- name: Install Hugo Snap Package --channel=extended/edge
+  snap:
+    name: hugo
+    channel: extended/edge
