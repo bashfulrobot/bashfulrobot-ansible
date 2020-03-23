@@ -32,15 +32,16 @@
 
 - name: Install Classic Snap Packages
   snap:
-    name: "{{ item }}"
+    name: "{{ classicsnaps }}"
     classic: yes
-  with_items:
-    - go
-    - restic
-    - snapcraft
-    - snapdiff
-    - slack
-    - code-insiders
+  vars:
+    classicsnaps:
+      - go
+      - restic
+      - snapcraft
+      - snapdiff
+      - slack
+      - code-insiders
 
 - name: Install Node Snap Package --channel=11/stable --classic
   snap:
@@ -54,10 +55,14 @@
     channel: beta
     classic: yes
 
-- name: Install IRCCLOUD Desktop Snap Package --channel=edge
+- name: Install Snap Packages from --channel=edge
   snap:
-    name: irccloud
+    name: "{{edgesnaps}}"
     channel: edge
+  vars:
+    edgesnaps:
+      - irccloud
+      - authy
 
 - name: Install Hugo Snap Package --channel=extended/edge
   snap:
