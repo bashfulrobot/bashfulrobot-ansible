@@ -25,3 +25,5 @@ export DEBEMAIL="dustin@bashfulrobot.com"
 
 # https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-3-install-awesome-powerline-fonts
 #POWERLEVEL9K_MODE='awesome-patched'
+
+export EDITOR=code-insiders
