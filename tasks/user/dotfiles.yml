@@ -1,3 +1,19 @@
+- name: Placing .gitconfig dotfile
+  copy:
+    src: files/dotfiles/git/.gitconfig
+    dest: "/home/{{ myusername }}/.gitconfig"
+    owner: "{{ myusername }}"
+    group: "{{ myusername }}"
+    mode: 0700
+
+- name: Placing .gitignore dotfile
+  copy:
+    src: files/dotfiles/git/.gitignore
+    dest: "/home/{{ myusername }}/.gitignore"
+    owner: "{{ myusername }}"
+    group: "{{ myusername }}"
+    mode: 0700
+
 - name: Placing Uncrustify CFG
   copy:
     src: files/dotfiles/uncrustify/uncrustify.cfg
