@@ -29,6 +29,7 @@
       - ephemeral
       - glimpse-editor
       - gravit-designer
+      - cheat
 
 - name: Install Classic Snap Packages
   snap:
