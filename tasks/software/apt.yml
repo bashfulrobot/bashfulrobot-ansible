@@ -94,6 +94,11 @@
       - insync
       - insync-nemo
       - preload
+
+- name: Install ToDoist Desktop .deb package from Github.
+  apt:
+    deb: https://github.com/KryDos/todoist-linux/releases/download/1.19/Todoist_1.19.0_amd64.deb
+
 - name: Autoremove and Purge APT Packages
   apt:
     autoremove: yes
