@@ -99,6 +99,10 @@
   apt:
     deb: https://github.com/KryDos/todoist-linux/releases/download/1.19/Todoist_1.19.0_amd64.deb
 
+- name: Install Folliate Desktop .deb package from Github.
+  apt:
+    deb: https://github.com/johnfactotum/foliate/releases/download/1.5.3/com.github.johnfactotum.foliate_1.5.3_all.deb
+
 - name: Autoremove and Purge APT Packages
   apt:
     autoremove: yes
