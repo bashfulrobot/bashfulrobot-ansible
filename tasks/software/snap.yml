@@ -65,13 +65,13 @@
       - irccloud
       - authy
 
-- name: Install Snap Packages from --channel=beta
-  snap:
-    name: "{{betasnaps}}"
-    channel: beta
-  vars:
-    betasnaps:
-      - molecule
+# - name: Install Snap Packages from --channel=beta
+#   snap:
+#     name: "{{betasnaps}}"
+#     channel: beta
+#   vars:
+#     betasnaps:
+#       - molecule
 
 - name: Install Hugo Snap Package --channel=extended/edge
   snap:
