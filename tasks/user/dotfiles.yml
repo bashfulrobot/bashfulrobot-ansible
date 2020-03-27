@@ -30,22 +30,6 @@
     group: "{{ myusername }}"
     mode: 0700
 
-- name: Placing Kitty CFG
-  copy:
-    src: files/dotfiles/kitty/kitty.conf
-    dest: "/home/{{ myusername }}/.config/kitty/kitty.conf"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
-    mode: 0700
-
-- name: Placing Kitty Theme
-  copy:
-    src: files/dotfiles/kitty/snazzy.conf
-    dest: "/home/{{ myusername }}/.config/kitty/snazzy.conf"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
-    mode: 0700
-
 - name: Placing .sbuildrc
   copy:
     src: files/dotfiles/sbuild/.sbuildrc
