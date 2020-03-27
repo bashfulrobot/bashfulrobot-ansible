@@ -3,9 +3,12 @@
     path: "{{ item }}"
     state: directory
     mode: '0755'
+    owner: "{{ myusername }}"
+    group: "{{ myusername }}"
   with_items:
     - "/home/{{ myusername }}/ubuntu/scratch"
     - "/home/{{ myusername }}/tmp"
     - "/home/{{ myusername }}/sync/gdrive-br"
     - "/home/{{ myusername }}/private"
     - "/home/{{ myusername }}/.config/ncspot"
+    - "/home/{{ myusername }}/snap/ncspot/current/.config/ncspot/"
