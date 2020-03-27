@@ -10,7 +10,7 @@ Currently this repo is working without issue (using a tasks based approach); how
 
 I am considering a refactor to Ansible Roles. If I do so, I will likely put the "tasks" based approach into a branch for the history. With this I am currently considering how to impliment roles due to the larger number of desktop software packages installed. It does not make sense to me to have an individual role for each package.
 
-I seem to have an occasional time where I commit a change to the repository and for some reason `ansible-pull` reports that there are no changes. WHen I know there are, I may run `sudo ansible-pull -U https://github.com/bashfulrobot/bashfulrobot-ansible.git`. I suspect it has something to do 
+I seem to have an occasional time where I commit a change to the repository and for some reason `ansible-pull` reports that there are no changes. WHen I know there are, I may run `sudo ansible-pull -U https://github.com/bashfulrobot/bashfulrobot-ansible.git`. I suspect it has something to do
 
 Open to suggestions via issues for improvements.
 
@@ -29,26 +29,3 @@ If you combine the above with some sort of file sync solution (I ue Seafile) tha
 ## Usage for you
 
 This might serve as a good starting point for configuring an Ubuntu system. If forking, you will need to change the variable for your username and home directory. Ensure that you do not add my SSH key (script pulls from GitHub). :-) Audit thouroughly if you plan to use.
-
-## TODO
-
-- Fix permission issues. Causes `ansible-pull` to choke due to local changes (permissions in the local repo).
-  - Can be fixed with:
-    - bash/zsh: `cd $HOME/.ansible/pull/bashfulrobot && git checkout -- $(git ls-files -m)`
-  - This can cause the cronjob to not work.
-- Add startup items
-- create skeleton for removing software
-  - single one off runs.
-- Budgie panels have a unique ID.
-  - Need to identify (`dconf list /com/solus-project/budgie-panel/panels/ | cut -d "/" -f1`)
-  - Set ansible vars dynamically for each host to remember panels
-    - Need to keep it from slowing down later processing
-    - Need to figure out how to track state (i.e.) Panels added and removed
-    - How to add a panel via dconf (is it possible?)
-      - but can get and edit primary panel settings.
-    - Look into leveraging the default install panel INI file.
-  - Remove panel shadows
-    - depends on panel work
-  - Add github release files such as shfmt, etc.
-- Install virtualbox
-- Install <https://github.com/kaepora/diskgem/releases>
