@@ -30,6 +30,7 @@
       - glimpse-editor
       - gravit-designer
       - cheat
+      - telegram-desktop
 
 - name: Install Classic Snap Packages
   snap:

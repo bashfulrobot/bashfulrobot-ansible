@@ -12,6 +12,7 @@
       - geary
       - gnome-screenshot
       - code-insiders
+      - telegram-desktop
 
 - name: Autoremove and Purge APT Packages
   apt:
@@ -23,7 +24,6 @@
   vars:
     packages:
       - git
-      - telegram-desktop
       - inxi
       - audacity
       - peek
