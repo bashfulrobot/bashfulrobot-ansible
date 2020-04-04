@@ -91,8 +91,8 @@
       - nordvpn
       - gocryptfs
       - sirikali
-      - insync
-      - insync-nemo
+      # - insync
+      # - insync-nemo
       - preload
       - numix-blue-gtk-theme
       - numix-gtk-theme
