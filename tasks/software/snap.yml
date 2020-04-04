@@ -4,7 +4,6 @@
     state: absent
   vars:
     remsnaps:
-      - hiri
       - croc
       - polar-bookshelf
 
@@ -12,6 +11,7 @@
   snap:
     name:
       - spotify
+      - hiri
       - lxd
       - ncspot
       - simplescreenrecorder
