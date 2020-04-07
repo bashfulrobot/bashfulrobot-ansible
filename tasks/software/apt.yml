@@ -98,6 +98,7 @@
       - numix-gtk-theme
       - numix-icon-theme
       - numix-icon-theme-circle
+      - jq
 
 # Need to find an automated way to update links upon new release
 - name: Install ToDoist Desktop .deb package from Github.
