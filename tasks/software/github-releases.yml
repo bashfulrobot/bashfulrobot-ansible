@@ -1,0 +1,19 @@
+- name: Get latest release version of COD from GitHub
+  github_release:
+    user: dim-an
+    repo: cod
+    action: latest_release
+  register: cod_release
+
+# Had to see the format returned.
+# JSON
+# - debug: msg="{{ cod_release.tag }}"
+
+- name: Download & Extract COD Tgz
+  unarchive:
+    src: "https://github.com/dim-an/cod/releases/download/{{cod_release.tag}}/cod-Linux.tgz"
+    dest: /usr/local/bin
+    # Ditch the containing folder on extraction
+    extra_opts: [--strip-components=1]
+    remote_src: yes
+  when: cod_release.changed

@@ -27,3 +27,6 @@ export DEBEMAIL="dustin@bashfulrobot.com"
 #POWERLEVEL9K_MODE='awesome-patched'
 
 export EDITOR=code-insiders
+
+# Enable COD binary
+source <(cod init $$ zsh)

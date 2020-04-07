@@ -4,3 +4,4 @@
       - ansible-lint
       - telegram-send
       - gcp
+      - github3.py
