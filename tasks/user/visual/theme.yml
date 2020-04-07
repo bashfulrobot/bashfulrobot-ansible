@@ -13,7 +13,7 @@
   dconf:
     key: "/org/gnome/desktop/interface/gtk-theme"
     # Needed extra quotes due to unlnown key error
-    value: "'Pocillo'"
+    value: "'Pocillo-slim'"
     state: present
 
 - name: Set Icon Theme
