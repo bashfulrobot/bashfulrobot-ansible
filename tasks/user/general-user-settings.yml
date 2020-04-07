@@ -101,3 +101,12 @@
       key: "/org/gnome/mutter/center-new-windows]"
       value: "true"
       state: present
+
+- name: Enable Night Light
+  dconf:
+      key: /org/gnome/settings-daemon/plugins/color/night-light-enabled
+      value: true
+- name: Set Night Light Temperature
+  dconf:
+      key: /org/gnome/settings-daemon/plugins/color/night-light-temperature
+      value: uint32 5500
