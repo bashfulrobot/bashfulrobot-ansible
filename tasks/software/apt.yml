@@ -62,6 +62,7 @@
       - gnome-calculator
       - valac
       - uncrustify
+      - libgtk-3-dev
       - devscripts
       - software-properties-gtk
       - meson
