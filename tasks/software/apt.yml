@@ -41,7 +41,6 @@
       - sbuild
       - lftp
       - htop
-      - deluge-gtk
       - gnome-mpv
       - calibre
       - whois
