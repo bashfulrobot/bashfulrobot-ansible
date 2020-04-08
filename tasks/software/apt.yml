@@ -56,7 +56,6 @@
       - python-psutil
       - psutils
       - libimage-exiftool-perl
-      - python3-pip
       - libcurl4
       - curl
       - gnupg-agent
