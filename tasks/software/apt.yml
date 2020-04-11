@@ -99,6 +99,7 @@
       - numix-icon-theme-circle
       - jq
       - gnome-documents
+      - brave-browser
 
 # Need to find an automated way to update links upon new release
 - name: Install ToDoist Desktop .deb package from Github.

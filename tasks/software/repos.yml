@@ -52,3 +52,13 @@
 #   apt_repository:
 #     repo: deb http://apt.insync.io/ubuntu {{ansible_distribution_release}} non-free contrib
 #     state: present
+
+- name: Add Brave APT signing Keys
+  apt_key:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
+    state: present
+
+- name: Add Brave Browser PPA
+  apt_repository:
+    repo: deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
+    state: present
