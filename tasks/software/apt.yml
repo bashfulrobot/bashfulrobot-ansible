@@ -13,6 +13,7 @@
       - gnome-screenshot
       - code-insiders
       - telegram-desktop
+      - firefox
 
 - name: Autoremove and Purge APT Packages
   apt:
@@ -93,10 +94,6 @@
       # - insync
       # - insync-nemo
       - preload
-      - numix-blue-gtk-theme
-      - numix-gtk-theme
-      - numix-icon-theme
-      - numix-icon-theme-circle
       - jq
       - gnome-documents
       - brave-browser
