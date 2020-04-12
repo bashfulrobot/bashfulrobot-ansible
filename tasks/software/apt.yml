@@ -44,6 +44,7 @@
       - htop
       - gnome-mpv
       - gnome-firmware
+      - drawing
       - calibre
       - whois
       - apt-transport-https
