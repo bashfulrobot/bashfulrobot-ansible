@@ -33,3 +33,21 @@
     dest: /usr/local/bin/comics-downloader
     mode: '0755'
   when: comicdl_release.changed
+
+- name: Get latest release version of Terraform from GitHub
+  github_release:
+    user: hashicorp
+    repo: terraform
+    action: latest_release
+  register: terraform_release
+
+- name: Clean up Terraform version number
+  set_fact:
+    terraform_version: "{{ terraform_release.tag | regex_replace('^v', '') }}"
+
+- name: Download & Extract Terraform Tgz
+  unarchive:
+    src: "https://releases.hashicorp.com/terraform/{{terraform_version}}/terraform_{{terraform_version}}_linux_amd64.zip"
+    dest: /usr/local/bin
+    remote_src: yes
+  when: terraform_release.changed
