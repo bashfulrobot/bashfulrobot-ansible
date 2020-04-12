@@ -1,0 +1,24 @@
+- name: Get latest release version of comics-downloader from GitHub
+  github_release:
+    user: hashicorp
+    repo: terraform
+    action: latest_release
+  register: terraform_release
+
+# - debug: msg="{{ terraform_release.tag }}"
+
+- name: Clean up Terraform version number
+  set_fact:
+    terraform_version: "{{ terraform_release.tag | regex_replace('^v', '') }}"
+
+# - debug: msg="{{ terraform_version }}"
+- name: Download & Extract Terraform Tgz
+  unarchive:
+    src: "https://releases.hashicorp.com/terraform/{{terraform_version}}/terraform_{{terraform_version}}_linux_amd64.zip"
+    dest: /usr/local/bin
+    remote_src: yes
+  when: terraform_release.changed
+
+# https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
+# {{ 'localhost:80' | regex_replace(':80') }}
+# {{ terraform_release.tag | regex_replace('^v', '') }}
