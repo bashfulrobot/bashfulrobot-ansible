@@ -1,4 +1,4 @@
-- name: Get latest release version of comics-downloader from GitHub
+- name: Get latest release version of Terraform from GitHub
   github_release:
     user: hashicorp
     repo: terraform
