@@ -17,3 +17,19 @@
     extra_opts: [--strip-components=1]
     remote_src: yes
   when: cod_release.changed
+
+- name: Get latest release version of comics-downloader from GitHub
+  github_release:
+    user: Girbons
+    repo: comics-downloader
+    action: latest_release
+  register: comicdl_release
+
+# - debug: msg="{{ comicdl_release.tag }}"
+
+- name: Download comics-downloader
+  get_url:
+    url: https://github.com/Girbons/comics-downloader/releases/download/{{comicdl_release.tag}}/comics-downloader
+    dest: /usr/local/bin/comics-downloader
+    mode: '0755'
+  when: comicdl_release.changed
