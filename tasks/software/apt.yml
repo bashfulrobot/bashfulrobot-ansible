@@ -43,6 +43,7 @@
       - lftp
       - htop
       - gnome-mpv
+      - gnome-firmware
       - calibre
       - whois
       - apt-transport-https
