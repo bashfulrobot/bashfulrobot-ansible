@@ -12,3 +12,4 @@
     - "/home/{{ myusername }}/private"
     - "/home/{{ myusername }}/.config/ncspot"
     - "/home/{{ myusername }}/snap/ncspot/current/.config/ncspot/"
+    - "/home/{{ myusername }}/.config/budgie-extras/clockworks/"

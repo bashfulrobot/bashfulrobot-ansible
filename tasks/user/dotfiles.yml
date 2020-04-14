@@ -53,3 +53,11 @@
     owner: "root"
     group: "root"
     mode: 0644
+
+- name: Placing Clockworks config
+  copy:
+    src: files/dotfiles/clockworks/clockdata
+    dest: "/home/{{ myusername }}/.config/budgie-extras/clockworks/clockdata"
+    owner: "root"
+    group: "root"
+    mode: 0644
