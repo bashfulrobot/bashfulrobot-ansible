@@ -141,3 +141,10 @@
         dest: "/home/{{ myusername }}/.oh-my-zsh/custom/cheatsheets.zsh"
         owner: "{{ myusername }}"
         group: "{{ myusername }}"
+
+- name: Placing aws-cli.zsh CFG
+  copy:
+        src: files/dotfiles/zsh/aws-cli.zsh
+        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/aws-cli.zsh"
+        owner: "{{ myusername }}"
+        group: "{{ myusername }}"
