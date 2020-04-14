@@ -1,24 +1,17 @@
-- name: Get latest release version of Terraform from GitHub
+- name: Get latest release version of Gh ClI from GitHub
   github_release:
-    user: hashicorp
-    repo: terraform
+    user: cli
+    repo: cli
     action: latest_release
-  register: terraform_release
+  register: gh_cli_release
 
-# - debug: msg="{{ terraform_release.tag }}"
+# - debug: msg="{{ gh-cli_release.tag }}"
 
-- name: Clean up Terraform version number
+- name: Get GH CLI version number w/o V
   set_fact:
-    terraform_version: "{{ terraform_release.tag | regex_replace('^v', '') }}"
+    gh_cli_version: "{{ gh_cli_release.tag | regex_replace('^v', '') }}"
 
-# - debug: msg="{{ terraform_version }}"
-- name: Download & Extract Terraform Tgz
-  unarchive:
-    src: "https://releases.hashicorp.com/terraform/{{terraform_version}}/terraform_{{terraform_version}}_linux_amd64.zip"
-    dest: /usr/local/bin
-    remote_src: yes
-  when: terraform_release.changed
-
-# https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
-# {{ 'localhost:80' | regex_replace(':80') }}
-# {{ terraform_release.tag | regex_replace('^v', '') }}
+- name: Install GH CLI .deb package from Github.
+  apt:
+    deb: https://github.com/cli/cli/releases/download/{{gh_cli_release.tag}}/gh_{{gh_cli_version}}_linux_amd64.deb
+  when: gh_cli_release.changed
