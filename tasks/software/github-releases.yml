@@ -51,3 +51,19 @@
     dest: /usr/local/bin
     remote_src: yes
   when: terraform_release.changed
+
+- name: Get latest release version of Gh ClI from GitHub
+  github_release:
+    user: cli
+    repo: cli
+    action: latest_release
+  register: gh_cli_release
+
+- name: Get GH CLI version number w/o V
+  set_fact:
+    gh_cli_version: "{{ gh_cli_release.tag | regex_replace('^v', '') }}"
+
+- name: Install GH CLI .deb package from Github.
+  apt:
+    deb: https://github.com/cli/cli/releases/download/{{gh_cli_release.tag}}/gh_{{gh_cli_version}}_linux_amd64.deb
+  when: gh_cli_release.changed
