@@ -50,7 +50,7 @@
 - name: Install Node Snap Package --channel=11/stable --classic
   snap:
     name: node
-    channel: 11/stable
+    channel: 13/stable
     classic: yes
 
 - name: Install Multipass Snap Package --channel=beta --classic
