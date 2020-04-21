@@ -62,3 +62,13 @@
   apt_repository:
     repo: deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
     state: present
+
+- name: Add Typora APT signing Keys
+  apt_key:
+    url: https://typora.io/linux/public-key.asc
+    state: present
+
+- name: Add Typora PPA
+  apt_repository:
+    repo: deb https://typora.io/linux ./
+    state: present
