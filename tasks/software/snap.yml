@@ -46,6 +46,7 @@
       - slack
       - code-insiders
       - espanso
+      - kubectl
 
 - name: Install Node Snap Package --channel=11/stable --classic
   snap:
