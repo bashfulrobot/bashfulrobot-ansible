@@ -11,6 +11,10 @@ function myint() {
   ip -4 a | grep -v valid_lft | awk '{print $2}'
 }
 
+function catclip() {
+  cat $1 | xclip -i -selection clipboard
+}
+
 function myip() {
   hostname -I | awk '{print $1}'
 }
