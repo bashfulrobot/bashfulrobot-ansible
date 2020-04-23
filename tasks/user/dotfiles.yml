@@ -61,3 +61,10 @@
     owner: "root"
     group: "root"
     mode: 0644
+
+- name: Placing panel.ini
+  copy:
+    src: files/dotfiles/budgie/panel.ini
+    dest: "/etc/budgie-desktop/panel.ini"
+    owner: "root"
+    group: "root"

@@ -13,3 +13,10 @@
     - "/home/{{ myusername }}/.config/ncspot"
     - "/home/{{ myusername }}/snap/ncspot/current/.config/ncspot/"
     - "/home/{{ myusername }}/.config/budgie-extras/clockworks/"
+
+- name: Create /etc/budgie-desktop directory if it does not exist
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "/etc/budgie-desktop"
