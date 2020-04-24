@@ -101,6 +101,7 @@
       - brave-browser
       - budgie-clockworks-applet
       - typora
+      - tailscale
 
 # Need to find an automated way to update links upon new release
 - name: Install ToDoist Desktop .deb package from Github.

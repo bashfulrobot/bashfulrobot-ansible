@@ -72,3 +72,13 @@
   apt_repository:
     repo: deb https://typora.io/linux ./
     state: present
+
+- name: Add Tailscale APT signing Keys
+  apt_key:
+    url: https://pkgs.tailscale.com/stable/ubuntu/focal.gpg
+    state: present
+
+- name: Add Tailscale PPA
+  apt_repository:
+    repo: deb https://pkgs.tailscale.com/stable/ubuntu focal main
+    state: present
