@@ -102,6 +102,14 @@
       value: "true"
       state: present
 
+- name: Enable Nemo Desktop Grid
+  become: true
+  become_user: "{{ myusername }}"
+  dconf:
+      key: "/org/nemo/desktop/use-desktop-grid"
+      value: "true"
+      state: present
+
 # - name: Enable Night Light
 #   become: true
 #   become_user: "{{ myusername }}"
