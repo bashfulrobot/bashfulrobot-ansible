@@ -15,6 +15,11 @@ function checkInstalled() {
   $DPKG -s "$1" 2>/dev/null >/dev/null || sudo $APT -y install "$1"
 }
 
+function getPanelId() {
+  ID=$(dconf dump /com/solus-project/budgie-panel/panels/ | grep { | cut -d '[' -f2 | cut -d ']' -f1)
+  echo "$ID"
+}
+
 # Update APT Repos of older than 12 hours
 if [ -z "$(find /var/cache/apt/pkgcache.bin -mmin -720)" ]; then
   sudo apt update
@@ -64,7 +69,7 @@ function deployLocal() {
   fi
 
   # Run ansible-pull no matter what (local dev iteration)
-  $ANSIBLE $MYYAML --connection=local
+  $ANSIBLE --extra-vars "PANEL_ID=$(getPanelId)" $MYYAML --connection=local
 }
 
 # Setup Ansible CFG
@@ -110,7 +115,7 @@ case $CHOICE in
   ;;
 3)
   echo "Running ansible-pull from $MYREPORMT"
-  $APULL -U $MYREPORMT
+  $APULL --extra-vars "PANEL_ID=$(getPanelId)" -U $MYREPORMT
   ;;
 4)
   echo "Running $MYREPO/local-test.yml"
