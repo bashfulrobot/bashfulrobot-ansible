@@ -42,7 +42,7 @@
   become: true
   become_user: "{{ myusername }}"
   dconf:
-      key: "/com/solus-project/budgie-raven/allow-volume-overdrive]"
+      key: "/com/solus-project/budgie-raven/allow-volume-overdrive"
       value: "true"
       state: present
 
@@ -50,7 +50,7 @@
   become: true
   become_user: "{{ myusername }}"
   dconf:
-      key: "/org/gnome/desktop/sound/allow-volume-above-100-percent]"
+      key: "/org/gnome/desktop/sound/allow-volume-above-100-percent"
       value: "true"
       state: present
 
@@ -58,7 +58,7 @@
   become: true
   become_user: "{{ myusername }}"
   dconf:
-      key: "/com/solus-project/budgie-raven/show-mic-input-widget]"
+      key: "/com/solus-project/budgie-raven/show-mic-input-widget"
       value: "true"
       state: present
 
@@ -66,7 +66,7 @@
   become: true
   become_user: "{{ myusername }}"
   dconf:
-      key: "/com/solus-project/budgie-raven/show-sound-output-widget]"
+      key: "/com/solus-project/budgie-raven/show-sound-output-widge]"
       value: "true"
       state: present
 
@@ -74,7 +74,7 @@
   become: true
   become_user: "{{ myusername }}"
   dconf:
-      key: "/com/solus-project/budgie-raven/show-calendar-widget]"
+      key: "/com/solus-project/budgie-raven/show-calendar-widget"
       value: "false"
       state: present
 
@@ -82,7 +82,7 @@
   become: true
   become_user: "{{ myusername }}"
   dconf:
-      key: "/com/solus-project/budgie-raven/show-power-strip]"
+      key: "/com/solus-project/budgie-raven/show-power-strip"
       value: "false"
       state: present
 
@@ -90,7 +90,7 @@
   become: true
   become_user: "{{ myusername }}"
   dconf:
-      key: "/com/solus-project/budgie-wm/center-windows]"
+      key: "/com/solus-project/budgie-wm/center-windows"
       value: "true"
       state: present
 
