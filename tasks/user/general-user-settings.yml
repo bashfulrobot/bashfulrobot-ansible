@@ -75,7 +75,7 @@
   become_user: "{{ myusername }}"
   dconf:
       key: "/com/solus-project/budgie-raven/show-calendar-widget]"
-      value: "true"
+      value: "false"
       state: present
 
 - name: Showing Powerstrip in Raven
@@ -83,7 +83,7 @@
   become_user: "{{ myusername }}"
   dconf:
       key: "/com/solus-project/budgie-raven/show-power-strip]"
-      value: "true"
+      value: "false"
       state: present
 
 - name: Set New Windows to Center on Launch
@@ -109,6 +109,30 @@
       key: "/org/nemo/desktop/use-desktop-grid"
       value: "true"
       state: present
+
+- name: Set the Number of Default Workspaces
+  become: true
+  become_user: "{{ myusername }}"
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/num-workspaces"
+    value: "6"
+    state: present
+
+- name: Set panel width
+  become: true
+  become_user: "{{ myusername }}"
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{{ PANEL_ID }}/size"
+    value: "50"
+    state: present
+
+- name: Set panel location
+  become: true
+  become_user: "{{ myusername }}"
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{{ PANEL_ID }}/location"
+    value: "'top'"
+    state: present
 
 # - name: Enable Night Light
 #   become: true
