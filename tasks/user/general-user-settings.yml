@@ -133,16 +133,3 @@
     key: "/com/solus-project/budgie-panel/panels/{{ PANEL_ID }}/location"
     value: "'top'"
     state: present
-
-# - name: Enable Night Light
-#   become: true
-#   become_user: "{{ myusername }}"
-#   dconf:
-#       key: /org/gnome/settings-daemon/plugins/color/night-light-enabled
-#       value: true
-# - name: Set Night Light Temperature
-#   become: true
-#   become_user: "{{ myusername }}"
-#   dconf:
-#       key: /org/gnome/settings-daemon/plugins/color/night-light-temperature
-#       value: uint32 5500
