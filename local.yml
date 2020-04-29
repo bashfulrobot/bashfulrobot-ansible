@@ -16,7 +16,7 @@
 
     # Software Settings
     - include: tasks/software/repos.yml
-    - include: tasks/software/docker.yml
+    # - include: tasks/software/docker.yml
     - include: tasks/software/apt.yml
     - include: tasks/software/pip.yml
     - include: tasks/software/snap.yml
