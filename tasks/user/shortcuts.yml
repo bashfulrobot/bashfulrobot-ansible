@@ -29,7 +29,7 @@
   become_user: "{{ myusername }}"
   dconf:
       key: "/org/gnome/settings-daemon/plugins/media-keys/terminal"
-      value: "'<Super>Return'"
+      value: "['<Super>Return']"
       state: present
 
 - name: Changing Close Application Keyboard Shortcut
