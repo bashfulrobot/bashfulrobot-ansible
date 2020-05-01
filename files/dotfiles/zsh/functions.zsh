@@ -70,3 +70,11 @@ function update-system-cfg() {
 function rename-pad-num() {
   rename 's/\d+/sprintf("%04d",$&)/e' "$1"
 }
+
+function gh-rate-limit-reset-time() {
+  date -d @$(curl -X GET https://api.github.com/rate_limit | jq .rate.reset)
+}
+
+function gh-rate-limit() {
+  curl -X GET https://api.github.com/rate_limit
+}
