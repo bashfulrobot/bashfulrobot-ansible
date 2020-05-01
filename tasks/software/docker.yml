@@ -1,26 +1,33 @@
-# - name: Add Docker's public PGP key to the APT keyring
-#   apt_key:
-#     id: "9DC858229FC7DD38854AE2D88D81803C0EBFCD88"
-#     url: "https://download.docker.com/linux/ubuntu/gpg"
+- name: Add Docker's public PGP key to the APT keyring
+  apt_key:
+    id: "9DC858229FC7DD38854AE2D88D81803C0EBFCD88"
+    url: "https://download.docker.com/linux/ubuntu/gpg"
 
-# - name: Configure Docker's upstream APT STABLE Repository for 19.10
-#   apt_repository:
-#     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-#     update_cache: true
-#   when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'focal'
+# Hard code release so that it will work on 20.04
+# When Docker supports officially - need to change
+- name: Configure Docker's upstream APT STABLE Repository
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu eoan stable"
+    update_cache: true
 
-# - name: Configure Docker's upstream APT STABLE Repository when NOT 19.10
-#   apt_repository:
-#     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
-#     update_cache: true
-#   when: ansible_distribution == 'Ubuntu' and ansible_distribution_release != 'focal'
+- name: Remove Old Docker APT Packages (Ubuntu/Debian)
+  apt:
+    name: "{{ rempackages }}"
+    state: absent
+  vars:
+    rempackages:
+      - docker
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
 
-# - name: Remove Docker CE
-#   apt:
-#     name: "docker-ce"
-#     state: "absent"
+- name: Install Docker CE
+  apt:
+    name: "docker-ce"
+    state: "present"
 
-# - name: Remove Docker-Compose CE
-#   apt:
-#     name: "docker-compose"
-#     state: "absent"
+- name: Install Docker-Compose CE
+  apt:
+    name: "docker-compose"
+    state: "present"
