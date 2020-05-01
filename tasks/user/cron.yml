@@ -1,5 +1,5 @@
 - name: Install Ansible Cron Job (10 Min)
-  cron: user="dustin" name="Ansible provision" minute="*/10" job="sudo /usr/bin/ansible-pull -o -U https://github.com/bashfulrobot/bashfulrobot-ansible.git > /dev/null"
+  cron: user="dustin" name="Ansible provision" minute="*/40" job="sudo /usr/bin/ansible-pull -o -U https://github.com/bashfulrobot/bashfulrobot-ansible.git > /dev/null"
 
 - name: Install Daily Ansible Cron Jobs
   cron: user="dustin" name="Ansible Daily provision" minute="30" hour="7,17" job="sudo /usr/bin/ansible-pull -U https://github.com/bashfulrobot/bashfulrobot-ansible.git > /dev/null"
