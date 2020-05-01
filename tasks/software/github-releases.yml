@@ -32,7 +32,7 @@
     url: https://github.com/Girbons/comics-downloader/releases/download/{{comicdl_release.tag}}/comics-downloader
     dest: /usr/local/bin/comics-downloader
     mode: '0755'
-  when: comicdl_release.changed
+  # when: comicdl_release.changed
 
 - name: Get latest release version of Terraform from GitHub
   github_release:
@@ -50,7 +50,7 @@
     src: "https://releases.hashicorp.com/terraform/{{terraform_version}}/terraform_{{terraform_version}}_linux_amd64.zip"
     dest: /usr/local/bin
     remote_src: yes
-  when: terraform_release.changed
+  # when: terraform_release.changed
 
 - name: Get latest release version of Gh ClI from GitHub
   github_release:
@@ -66,4 +66,4 @@
 - name: Install GH CLI .deb package from Github.
   apt:
     deb: https://github.com/cli/cli/releases/download/{{gh_cli_release.tag}}/gh_{{gh_cli_version}}_linux_amd64.deb
-  when: gh_cli_release.changed
+  # when: gh_cli_release.changed

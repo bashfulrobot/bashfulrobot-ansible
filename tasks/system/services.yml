@@ -6,3 +6,12 @@
   systemd:
     state: started
     name: ssh
+
+- name: Enable Docker Service
+  systemd:
+    enabled: yes
+    name: docker
+- name: Making Sure SSH is Started
+  systemd:
+    state: started
+    name: docker

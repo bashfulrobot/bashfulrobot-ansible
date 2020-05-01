@@ -5,14 +5,9 @@
   vars:
     rempackages:
       - libreoffice-*
-      - docker
-      - docker-engine
-      - docker.io
       - plank
       - geary
       - gnome-screenshot
-      - code-insiders
-      - telegram-desktop
       - firefox
 
 - name: Autoremove and Purge APT Packages
@@ -28,7 +23,6 @@
       - inxi
       - audacity
       - peek
-      - neovim
       - xclip
       - ncdu
       - tmux
@@ -42,7 +36,7 @@
       - sbuild
       - lftp
       - htop
-      - gnome-mpv
+      - celluloid
       - gnome-firmware
       - drawing
       - calibre
@@ -51,7 +45,6 @@
       - ca-certificates
       - software-properties-common
       - python3-pip
-      - nomacs
       - snapd-xdg-open
       - asciinema
       - flameshot
@@ -82,7 +75,6 @@
       - pdfarranger
       - hub
       - rename
-      - lazygit
       - encfs
       - graphviz
       - cpufrequtils
@@ -103,6 +95,7 @@
       - typora
       - tailscale
       - mellowplayer
+      - docker-compose
 
 # Need to find an automated way to update links upon new release
 - name: Install ToDoist Desktop .deb package from Github.

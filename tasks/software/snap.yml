@@ -1,11 +1,11 @@
-- name: Remove SNAP Packages
-  snap:
-    name: "{{ remsnaps }}"
-    state: absent
-  vars:
-    remsnaps:
-      - croc
-      - polar-bookshelf
+# - name: Remove SNAP Packages
+#   snap:
+#     name: "{{ remsnaps }}"
+#     state: absent
+#   vars:
+#     remsnaps:
+#       - croc
+#       - polar-bookshelf
 
 - name: Install Snap Packages
   snap:
