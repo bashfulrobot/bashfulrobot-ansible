@@ -67,3 +67,47 @@
   apt:
     deb: https://github.com/cli/cli/releases/download/{{gh_cli_release.tag}}/gh_{{gh_cli_version}}_linux_amd64.deb
   # when: gh_cli_release.changed
+
+- name: Get latest release version of Todoist from GitHub
+  github_release:
+    user: KryDos
+    repo: todoist-linux
+    action: latest_release
+  register: todoist_release
+
+- name: Get Todoist version number w/o V
+  set_fact:
+    todoist_version: "{{ todoist_release.tag | regex_replace('^v', '') }}"
+
+- name: Install Todoist .deb package from Github.
+  apt:
+    deb: https://github.com/KryDos/todoist-linux/releases/download/{{todoist_version}}/Todoist_{{todoist_version}}.0_amd64.deb
+  # when: todoist_release.changed
+
+- name: Get latest release version of Foliate from GitHub
+  github_release:
+    user: johnfactotum
+    repo: foliate
+    action: latest_release
+  register: foliate_release
+
+- name: Get Foliate version number w/o V
+  set_fact:
+    foliate_version: "{{ foliate_release.tag | regex_replace('^v', '') }}"
+
+- name: Install Foliate .deb package from Github.
+  apt:
+    deb: https://github.com/johnfactotum/foliate/releases/download/{{foliate_version}}/com.github.johnfactotum.foliate_{{foliate_version}}_all.deb
+  # when: folliate_release.changed
+
+- name: Get latest release version of Espanso from GitHub
+  github_release:
+    user: federico-terzi
+    repo: espanso
+    action: latest_release
+  register: espanso_release
+
+- name: Install Espanso .deb package from Github.
+  apt:
+    deb: https://github.com/federico-terzi/espanso/releases/download/{{espanso_release.tag}}/espanso-debian-amd64.deb
+  # when: espanso_release.changed
