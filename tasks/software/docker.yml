@@ -24,10 +24,11 @@
 
 - name: Install Docker CE
   apt:
-    name: "docker-ce"
+    name: "{{ dockerpackages }}"
     state: "present"
-
-- name: Install Docker-Compose CE
-  apt:
-    name: "docker-compose"
-    state: "present"
+  vars:
+    dockerpackages:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-compose
