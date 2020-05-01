@@ -74,7 +74,6 @@ function rename-pad-num() {
 function gh-rate-limit-reset-time() {
   # Are the apps installed?
   checkInstalledApt jq
-  checkInstalledApt date
   checkInstalledApt curl
 
   date -d @$(curl -X GET https://api.github.com/rate_limit | jq .rate.reset)
