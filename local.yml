@@ -10,13 +10,12 @@
   tasks:
     # Update entire system
     - include: tasks/software/update-system.yml
-    #- name: Adding Ansible Settings
     # Ansible Settings
     - include: tasks/ansible/sudoers.yml
 
     # Software Settings
     - include: tasks/software/repos.yml
-    # - include: tasks/software/docker.yml
+    - include: tasks/software/docker.yml
     - include: tasks/software/apt.yml
     - include: tasks/software/pip.yml
     - include: tasks/software/snap.yml
@@ -49,8 +48,4 @@
     # User Visual Settings
     # Running defaults for now
     - include: tasks/user/visual/theme.yml
-    # - include: tasks/user/visual/wallpaper.yml
     - include: tasks/user/visual/desktop-icons.yml
-
-    # System cleanup
-    - include: tasks/software/update-system.yml
