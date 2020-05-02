@@ -13,7 +13,7 @@
   dconf:
     key: "/org/gnome/desktop/interface/gtk-theme"
     # Needed extra quotes due to unlnown key error
-    value: "'Pocillo-dark-slim'"
+    value: "'Pop-dark'"
     state: present
 
 - name: Set Icon Theme
@@ -21,7 +21,7 @@
   become_user: "{{ myusername }}"
   dconf:
     key: "/org/gnome/desktop/interface/icon-theme"
-    value: "'Zafiro'"
+    value: "'Pop'"
     state: present
 
 - name: Set Theme to Dark
