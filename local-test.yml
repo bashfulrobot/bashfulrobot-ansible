@@ -15,3 +15,4 @@
     #- include: tasks/software/repos.yml
     #- include: tasks/software/apt.yml
     #- include: tasks/software/snap.yml
+    # - include: tasks/software/pop-theme.yml
