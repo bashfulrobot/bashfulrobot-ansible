@@ -1,8 +1,16 @@
-- name: Install Ansible Cron Job (10 Min)
-  cron: user="dustin" name="Ansible provision" minute="*/40" job="sudo /usr/bin/ansible-pull -o -U https://github.com/bashfulrobot/bashfulrobot-ansible.git > /dev/null"
+- name: Placing ansible-pull-cron.sh
+  copy:
+    src: files/scripts/ansible-pull-cron.sh
+    dest: "/usr/local/bin/ansible-pull-cron.sh"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Install Ansible Cron Job (40 Min)
+  cron: user="dustin" name="Ansible provision" minute="*/40" job="/usr/local/bin/ansible-pull-cron.shl"
 
 - name: Install Daily Ansible Cron Jobs
-  cron: user="dustin" name="Ansible Daily provision" minute="30" hour="7,17" job="sudo /usr/bin/ansible-pull -U https://github.com/bashfulrobot/bashfulrobot-ansible.git > /dev/null"
+  cron: user="dustin" name="Ansible Daily provision" minute="30" hour="7,17" job="/usr/local/bin/ansible-pull-cron.sh"
 
 - name: Add Ansible Cron Log
   file:
