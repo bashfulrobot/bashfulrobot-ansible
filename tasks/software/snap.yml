@@ -19,7 +19,6 @@
       - bw
       - icdiff
       - mumble
-      - shfmt
       - review-tools
       - standard-notes
       - scrcpy
@@ -40,7 +39,6 @@
   vars:
     classicsnaps:
       - go
-      - restic
       - snapcraft
       - snapdiff
       - slack
@@ -68,6 +66,14 @@
     edgesnaps:
       - irccloud
       - authy
+      - shfmt
+
+- name: Install Snap Packages --channel=edge --classic
+  snap:
+    name: restic
+    channel: edge
+    classic: yes
+
 
 # - name: Install Snap Packages from --channel=beta
 #   snap:
