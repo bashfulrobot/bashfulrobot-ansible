@@ -1,0 +1,24 @@
+- name: Install Desktop APT Packages
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - build-essential
+      - desktop-file-utils
+      - gettext
+      - gobject-introspection
+      - libgee-0.8-dev
+      - libgirepository1.0-dev
+      - libglib2.0-dev
+      - libgranite-dev
+      - libgtk-3-dev
+      - libplank-dev
+      - libunity-dev
+      - libxml2-dev
+      - libxml2-utils
+      - meson
+      - valac
+      - valadoc
+      # - libgala-dev
+      # - libswitchboard-2.0-dev
+      # - libwingpanel-2.0-dev
