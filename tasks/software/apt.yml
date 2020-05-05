@@ -94,7 +94,6 @@
       - budgie-clockworks-applet
       - typora
       - tailscale
-      - mellowplayer
 
 - name: Autoremove and Purge APT Packages
   apt:
