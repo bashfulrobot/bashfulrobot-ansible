@@ -17,6 +17,8 @@ alias octperm="stat -c '%A %a %n'"
 
 alias s="gnome-control-center sound"
 
+alias espanso-list="cat $HOME/.config/espanso/default.yml | grep trigger | cut -d ' ' -f5 | less"
+
 alias vpn-login="/usr/bin/nordvpn login"
 alias vpn-logout="/usr/bin/nordvpn logout"
 alias vpn-up="/usr/bin/nordvpn connect"
