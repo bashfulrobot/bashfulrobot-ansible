@@ -123,7 +123,7 @@
   become_user: "{{ myusername }}"
   dconf:
     key: "/com/solus-project/budgie-panel/panels/{{ PANEL_ID }}/size"
-    value: "30"
+    value: "35"
     state: present
 
 - name: Set panel location
