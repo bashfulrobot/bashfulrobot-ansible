@@ -43,7 +43,7 @@
       - snapdiff
       - slack
       - code-insiders
-      - espanso
+      # - espanso
       - kubectl
 
 - name: Install Node Snap Package --channel=11/stable --classic
