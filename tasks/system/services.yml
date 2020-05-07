@@ -19,8 +19,8 @@
 - name: Enable Syncthing Service
   systemd:
     scope: user
-    enabled: syncthing
-    name: docker
+    enabled: yes
+    name: syncthing
 - name: Making Sure Syncthing is Started
   systemd:
     scope: user
