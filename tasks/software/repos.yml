@@ -81,3 +81,13 @@
   apt_repository:
     repo: deb https://pkgs.tailscale.com/stable/ubuntu focal main
     state: present
+
+- name: Add Syncthing APT signing Keys
+  apt_key:
+    url: https://syncthing.net/release-key.txt
+    state: present
+
+- name: Add Syncthing PPA
+  apt_repository:
+    repo: deb https://apt.syncthing.net/ syncthing stable
+    state: present

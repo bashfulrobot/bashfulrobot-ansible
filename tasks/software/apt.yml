@@ -91,6 +91,7 @@
       - budgie-clockworks-applet
       - typora
       - tailscale
+      - syncthing
 
 - name: Autoremove and Purge APT Packages
   apt:
