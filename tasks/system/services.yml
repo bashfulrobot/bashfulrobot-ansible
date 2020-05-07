@@ -11,7 +11,7 @@
   systemd:
     enabled: yes
     name: docker
-- name: Making Sure SSH is Started
+- name: Making Sure Docker is Started
   systemd:
     state: started
     name: docker
