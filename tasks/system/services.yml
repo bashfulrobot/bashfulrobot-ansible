@@ -16,13 +16,20 @@
     state: started
     name: docker
 
+# https://github.com/ansible/ansible/issues/50272
+- name: get my user id for user scoped systemd
+  become: true
+  become_user: "{{ myusername }}"
+  command: id -u
+  register: myuid
+# https://github.com/ansible/ansible/issues/50272
 - name: Enable Syncthing Service
+  become: true
+  become_user: "{{ myusername }}"
   systemd:
     scope: user
     enabled: yes
-    name: syncthing
-- name: Making Sure Syncthing is Started
-  systemd:
-    scope: user
     state: started
     name: syncthing
+  environment:
+        XDG_RUNTIME_DIR: "/run/user/{{ myuid.stdout }}"
