@@ -1,10 +1,3 @@
-# https://github.com/ansible/ansible/issues/50272
-# - name: get my user id for user scoped systemd
-#   become: true
-#   become_user: "{{ myusername }}"
-#   command: id -u
-#   register: myuid
-
 - name: Enable and Start System Scoped Services
   systemd:
     enabled: yes
@@ -14,30 +7,24 @@
       - ssh
       - docker
 
-- name: Enable Systemd User Scoped Services
-  command: systemctl enable "{{item}}"@"{{ myusername }}"
-  with_items:
-      - syncthing
-
-- name: Start Systemd User Scoped Services
-  command: systemctl start "{{item}}"@"{{ myusername }}"
-  with_items:
-      - syncthing
-
-# https://github.com/ansible/ansible/issues/50272
-# - name: Enable and Start User Scoped Services
-#   become: true
-#   become_user: "{{ myusername }}"
-#   systemd:
-#     # daemon_reload: yes
-#     scope: user
-#     enabled: yes
-#     state: started
-#     name: "{{ item }}"
-#   environment:
-#         XDG_RUNTIME_DIR: "/run/user/{{ myuid.stdout }}"
+# - name: Enable Systemd User Scoped Services
+#   command: systemctl enable "{{item}}"@"{{ myusername }}"
 #   with_items:
 #       - syncthing
-#   register: result
+
+# - name: Start Systemd User Scoped Services
+#   command: systemctl start "{{item}}"@"{{ myusername }}"
+#   with_items:
+#       - syncthing
+
+
+
+- name: Enable and Start User Scoped Services
+  systemd:
+    enabled: yes
+    state: started
+    name: "{{ item }}"
+  with_items:
+      - "syncthing@{{ myusername }}"
 
 # - debug: msg="{{ result }}"
