@@ -14,6 +14,16 @@
       - ssh
       - docker
 
+- name: Enable Systemd User Scoped Services
+  command: systemctl enable "{{item}}"@"{{ myusername }}"
+  with_items:
+      - syncthing
+
+- name: Start Systemd User Scoped Services
+  command: systemctl start "{{item}}"@"{{ myusername }}"
+  with_items:
+      - syncthing
+
 # https://github.com/ansible/ansible/issues/50272
 # - name: Enable and Start User Scoped Services
 #   become: true
