@@ -1,36 +1,10 @@
-# - name: Placing /etc/apt/preferences.d/s76-pin-400
-#   copy:
-#     src: files/dotfiles/apt/s76-pin-400
-#     dest: "/etc/apt/preferences.d/s76-pin-400"
-#     owner: "root"
-#     group: "root"
-
-# - name: Add Launchpad PPAs
-#   apt_repository:
-#     repo: "{{ item }}"
-#     update_cache: yes
-#     state: present
-#   with_items:
-#     - ppa:system76/pop
-
-# - name: Install POP Theme APT Packages
-#   apt:
-#     name: "{{ packages }}"
-#   vars:
-#     packages:
-#       - pop-gtk-theme
-#       - pop-icon-theme
-#       - pop-fonts
-
-# https://launchpad.net/~system76/+archive/ubuntu/pop/+packages?field.name_filter=pop-gtk&field.status_filter=published&field.series_filter=focal
-
-# - name: Install POP-GTK-THEME .deb package from Launchpad.
-#   apt:
-#     deb: https://launchpad.net/~system76/+archive/ubuntu/pop/+files/pop-gtk-theme_5.2.0~1588203971~20.04~d94d9ec_all.deb
-
-# - name: Install POP-ICON-THEME .deb package from Launchpad.
-#   apt:
-#     deb: https://launchpad.net/~system76/+archive/ubuntu/pop/+files/pop-icon-theme_2.1.0~1583343731~20.04~11f18cb_all.deb
+- name: Add Pop Theme PPA
+  apt_repository:
+    repo: "{{ item }}"
+    update_cache: yes
+    state: present
+  with_items:
+    - ppa:bashfulrobot/pop-theme
 
 - name: Install POP theme Packages
   apt:
@@ -39,10 +13,7 @@
     poppackages:
       - pop-gtk-theme
       - pop-icon-theme
-
-- name: Install POP-FONTS .deb package from Launchpad.
-  apt:
-    deb: https://launchpad.net/~system76/+archive/ubuntu/pop/+files/pop-fonts_1.0.3~1555617065~20.04~a86eb73_all.deb
+      - pop-fonts
 
 - name: Set Window Tile Font
   become: true
