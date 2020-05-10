@@ -46,6 +46,14 @@
     group: "{{ myusername }}"
     mode: 0700
 
+- name: Placing .quiltrc
+  copy:
+    src: files/dotfiles/quilt/.quiltrc
+    dest: "/home/{{ myusername }}/.quiltrc"
+    owner: "{{ myusername }}"
+    group: "{{ myusername }}"
+    mode: 0700
+
 - name: Placing nord.json tilix Theme
   copy:
     src: files/dotfiles/tilix/nord.json
