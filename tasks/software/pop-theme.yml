@@ -24,13 +24,21 @@
 
 # https://launchpad.net/~system76/+archive/ubuntu/pop/+packages?field.name_filter=pop-gtk&field.status_filter=published&field.series_filter=focal
 
-- name: Install POP-GTK-THEME .deb package from Launchpad.
-  apt:
-    deb: https://launchpad.net/~system76/+archive/ubuntu/pop/+files/pop-gtk-theme_5.2.0~1588203971~20.04~d94d9ec_all.deb
+# - name: Install POP-GTK-THEME .deb package from Launchpad.
+#   apt:
+#     deb: https://launchpad.net/~system76/+archive/ubuntu/pop/+files/pop-gtk-theme_5.2.0~1588203971~20.04~d94d9ec_all.deb
 
-- name: Install POP-ICON-THEME .deb package from Launchpad.
+# - name: Install POP-ICON-THEME .deb package from Launchpad.
+#   apt:
+#     deb: https://launchpad.net/~system76/+archive/ubuntu/pop/+files/pop-icon-theme_2.1.0~1583343731~20.04~11f18cb_all.deb
+
+- name: Install POP theme Packages
   apt:
-    deb: https://launchpad.net/~system76/+archive/ubuntu/pop/+files/pop-icon-theme_2.1.0~1583343731~20.04~11f18cb_all.deb
+    name: "{{ poppackages }}"
+  vars:
+    poppackages:
+      - pop-gtk-theme
+      - pop-icon-theme
 
 - name: Install POP-FONTS .deb package from Launchpad.
   apt:

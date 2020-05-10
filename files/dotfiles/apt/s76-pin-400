@@ -1,6 +1,6 @@
 Package:  *
 Pin: release o=LP-PPA-system76-pop
-Pin-Priority: 400
+Pin-Priority: 100
 
 Package:  pop-gtk-theme
 Pin: release o=LP-PPA-system76-pop
