@@ -4,7 +4,7 @@
 	email = dustin@bashfulrobot.com
 
 [core]
-	editor = code-insiders
+	# editor = code-insiders
 	whitespace = fix,-indent-with-non-tab,trailing-space
 	excludesfile = ~/.gitignore
 
@@ -21,15 +21,15 @@
 # Comment: This is to unlock VSCode as your git diff and git merge tool
 
 # git mergetool
-[merge]
-    tool = vscode
+# [merge]
+#     tool = vscode
 
-[mergetool "vscode"]
-    cmd = code-insiders --wait $MERGED
+# [mergetool "vscode"]
+#     cmd = code-insiders --wait $MERGED
 
-# git difftool
-[diff]
-    tool = vscode
+# # git difftool
+# [diff]
+#     tool = vscode
 
-[difftool "vscode"]
-    cmd = code-insiders --wait --diff $LOCAL $REMOTE
+# [difftool "vscode"]
+#     cmd = code-insiders --wait --diff $LOCAL $REMOTE
