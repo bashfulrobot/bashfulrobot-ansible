@@ -24,9 +24,9 @@
       - scrcpy
       - htmldoc
       - libreoffice
-      - ephemeral
-      - glimpse-editor
-      - gravit-designer
+      # - ephemeral
+      # - glimpse-editor
+      # - gravit-designer
       - cheat
       - telegram-desktop
 
