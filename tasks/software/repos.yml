@@ -6,7 +6,7 @@
   with_items:
     - ppa:ubuntubudgie/backports
     - ppa:peek-developers/stable
-    - ppa:ubuntubudgie-dev/budgie-extras-daily
+    # - ppa:ubuntubudgie-dev/budgie-extras-daily
 
 - name: Add Canonical Partners PPA
   apt_repository:
