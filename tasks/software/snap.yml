@@ -23,14 +23,12 @@
       - standard-notes
       - scrcpy
       - htmldoc
-      - mailspring
       - libreoffice
       - ephemeral
       - glimpse-editor
       - gravit-designer
       - cheat
       - telegram-desktop
-      - screen
 
 - name: Install Classic Snap Packages
   snap:
