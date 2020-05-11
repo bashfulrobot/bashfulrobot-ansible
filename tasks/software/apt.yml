@@ -92,6 +92,7 @@
       - typora
       - tailscale
       - syncthing
+      - dh-make
 
 - name: Autoremove and Purge APT Packages
   apt:
