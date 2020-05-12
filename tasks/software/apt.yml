@@ -93,6 +93,8 @@
       - tailscale
       - syncthing
       - dh-make
+      - solaar
+      - piper
 
 - name: Autoremove and Purge APT Packages
   apt:
