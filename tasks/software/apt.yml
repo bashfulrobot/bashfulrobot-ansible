@@ -75,7 +75,7 @@
       - encfs
       - graphviz
       - cpufrequtils
-      - budgie-applications-menu
+      - budgie-applications-menu-applet
       - budgie-window-shuffler
       - pulseaudio
       - pavucontrol
