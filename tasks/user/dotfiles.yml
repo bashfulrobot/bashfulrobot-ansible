@@ -76,3 +76,19 @@
     dest: "/etc/budgie-desktop/panel.ini"
     owner: "root"
     group: "root"
+
+- name: Placing insync autostart
+  copy:
+    src: files/cfg/home/.config/autostart/insync.desktop
+    dest: "/home/{{ myusername }}/.config/autostart/insync.desktop"
+    owner: "{{ myusername }}"
+    group: "{{ myusername }}"
+    mode: 0644
+
+- name: Placing seafile autostart
+  copy:
+    src: files/cfg/home/.config/autostart/seaf-cli.desktop
+    dest: "/home/{{ myusername }}/.config/autostart/seaf-cli.desktop"
+    owner: "{{ myusername }}"
+    group: "{{ myusername }}"
+    mode: 0644
