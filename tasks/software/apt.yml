@@ -95,6 +95,7 @@
       - dh-make
       - solaar
       - piper
+      - profile-sync-daemon
 
 - name: Autoremove and Purge APT Packages
   apt:
