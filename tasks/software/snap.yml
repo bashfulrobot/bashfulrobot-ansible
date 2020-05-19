@@ -29,6 +29,7 @@
       # - gravit-designer
       - cheat
       - telegram-desktop
+      - ktouch
 
 - name: Install Classic Snap Packages
   snap:
