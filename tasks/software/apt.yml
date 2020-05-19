@@ -96,6 +96,7 @@
       - solaar
       - piper
       - profile-sync-daemon
+      - bat
 
 - name: Autoremove and Purge APT Packages
   apt:

@@ -24,3 +24,5 @@ alias vpn-settings="/usr/bin/nordvpn settings"
 alias vpn-status="/usr/bin/nordvpn status"
 alias vpn-account="/usr/bin/nordvpn account"
 alias vpn-help="/usr/bin/firefox https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-and-Linux-Mint.htm"
+
+alias cat="batcat"
