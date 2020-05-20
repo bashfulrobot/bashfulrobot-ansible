@@ -59,7 +59,7 @@
 
 - name: Install Snap Packages from --channel=edge
   snap:
-    name: "{{edgesnaps}}"
+    name: "{{ edgesnaps }}"
     channel: edge
   vars:
     edgesnaps:

@@ -11,7 +11,7 @@
 
 - name: Download & Extract COD Tgz
   unarchive:
-    src: "https://github.com/dim-an/cod/releases/download/{{cod_release.tag}}/cod-Linux.tgz"
+    src: "https://github.com/dim-an/cod/releases/download/{{ cod_release.tag }}/cod-Linux.tgz"
     dest: /usr/local/bin
     # Ditch the containing folder on extraction
     extra_opts: [--strip-components=1]
@@ -29,7 +29,7 @@
 
 - name: Download comics-downloader
   get_url:
-    url: https://github.com/Girbons/comics-downloader/releases/download/{{comicdl_release.tag}}/comics-downloader
+    url: https://github.com/Girbons/comics-downloader/releases/download/{{ comicdl_release.tag }}/comics-downloader
     dest: /usr/local/bin/comics-downloader
     mode: '0755'
   # when: comicdl_release.changed
@@ -47,7 +47,7 @@
 
 - name: Download & Extract Terraform Tgz
   unarchive:
-    src: "https://releases.hashicorp.com/terraform/{{terraform_version}}/terraform_{{terraform_version}}_linux_amd64.zip"
+    src: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
     dest: /usr/local/bin
     remote_src: yes
   # when: terraform_release.changed
@@ -65,7 +65,7 @@
 
 - name: Install GH CLI .deb package from Github.
   apt:
-    deb: https://github.com/cli/cli/releases/download/{{gh_cli_release.tag}}/gh_{{gh_cli_version}}_linux_amd64.deb
+    deb: https://github.com/cli/cli/releases/download/{{ gh_cli_release.tag }}/gh_{{ gh_cli_version }}_linux_amd64.deb
   # when: gh_cli_release.changed
 
 - name: Get latest release version of Todoist from GitHub
@@ -81,7 +81,7 @@
 
 - name: Install Todoist .deb package from Github.
   apt:
-    deb: https://github.com/KryDos/todoist-linux/releases/download/{{todoist_version}}/Todoist_{{todoist_version}}.0_amd64.deb
+    deb: https://github.com/KryDos/todoist-linux/releases/download/{{ todoist_version }}/Todoist_{{ todoist_version }}.0_amd64.deb
   # when: todoist_release.changed
 
 - name: Get latest release version of Foliate from GitHub
@@ -97,7 +97,7 @@
 
 - name: Install Foliate .deb package from Github.
   apt:
-    deb: https://github.com/johnfactotum/foliate/releases/download/{{foliate_version}}/com.github.johnfactotum.foliate_{{foliate_version}}_all.deb
+    deb: https://github.com/johnfactotum/foliate/releases/download/{{ foliate_version }}/com.github.johnfactotum.foliate_{{ foliate_version }}_all.deb
   # when: folliate_release.changed
 
 - name: Get latest release version of Espanso from GitHub
@@ -109,5 +109,5 @@
 
 - name: Install Espanso .deb package from Github.
   apt:
-    deb: https://github.com/federico-terzi/espanso/releases/download/{{espanso_release.tag}}/espanso-debian-amd64.deb
+    deb: https://github.com/federico-terzi/espanso/releases/download/{{ espanso_release.tag }}/espanso-debian-amd64.deb
   # when: espanso_release.changed

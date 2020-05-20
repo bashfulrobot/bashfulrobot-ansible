@@ -10,7 +10,7 @@
 
 - name: Add Canonical Partners PPA
   apt_repository:
-    repo: deb http://archive.canonical.com/ubuntu {{ansible_distribution_release}} partner
+    repo: deb http://archive.canonical.com/ubuntu {{ ansible_distribution_release }} partner
     state: present
 # - name: Add Microsoft APT signing Keys
 #   apt_key:
