@@ -30,3 +30,6 @@ export EDITOR=code-insiders
 
 # Enable COD binary
 source <(cod init $$ zsh)
+
+# Add colour to MAN pages
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
