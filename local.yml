@@ -3,6 +3,7 @@
   vars:
     myusername: dustin
     myhome: /home/dustin
+    xmind_version: 10.1.2-202004142327
   pre_tasks:
     - name: Update Repositories
       apt: update_cache=yes
