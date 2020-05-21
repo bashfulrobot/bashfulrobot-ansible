@@ -15,7 +15,7 @@
         shell: /usr/bin/zsh
   become: yes
 
-- name: Clone oh-my-zsh
+- name: Clone oh-my-zsh #noqa 401
   git:
         repo: https://github.com/robbyrussell/oh-my-zsh.git
         dest: /home/{{ myusername }}/.oh-my-zsh
@@ -23,31 +23,31 @@
   become: no
   register: omz_clone
 
-- name: Clone zsh-autosuggestions
+- name: Clone zsh-autosuggestions #noqa 401
   git:
         repo: https://github.com/zsh-users/zsh-autosuggestions.git
         dest: /home/{{ myusername }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
         update: yes
 
-- name: Clone zsh-history-substring-search
+- name: Clone zsh-history-substring-search #noqa 401
   git:
         repo: https://github.com/zsh-users/zsh-history-substring-search.git
         dest: /home/{{ myusername }}/.oh-my-zsh/custom/plugins/zsh-history-substring-search
         update: yes
 
-- name: Clone zsh-syntax-highlighting
+- name: Clone zsh-syntax-highlighting #noqa 401
   git:
         repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
         dest: /home/{{ myusername }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
         update: yes
 
-- name: Clone powerlevel10k Theme
+- name: Clone powerlevel10k Theme #noqa 401
   git:
         repo: https://github.com/romkatv/powerlevel10k.git
         dest: /home/{{ myusername }}/.oh-my-zsh/custom/themes/powerlevel10k
         update: yes
 
-- name: Clone zsh-z
+- name: Clone zsh-z #noqa 401
   git:
         repo: https://github.com/agkozak/zsh-z.git
         dest: /home/{{ myusername }}/.oh-my-zsh/custom/plugins/zsh-z

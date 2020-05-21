@@ -20,8 +20,8 @@
       group: root
       mode: 0700
 
-- name: Tap Ansible Cron Log
+- name: Tap Ansible Cron Log #noqa 301
   shell: date >> /home/{{ myusername }}/.ansible-cron
 
-- name: Rotate Ansible Cron Log
-  shell: tail -n5 /home/{{ myusername }}/.ansible-cron > /home/{{ myusername }}/.ansible-cron.tmp && mv /home/{{ myusername }}/.ansible-cron.tmp /home/{{ myusername }}/.ansible-cron
+- name: Rotate Ansible Cron Log #noqa 301
+  shell: tail -n5 /home/{{ myusername }}/.ansible-cron > /home/{{ myusername }}/.ansible-cron.tmp && mv /home/{{ myusername }}/.ansible-cron.tmp /home/{{ myusername }}/.ansible-cron #noqa 204

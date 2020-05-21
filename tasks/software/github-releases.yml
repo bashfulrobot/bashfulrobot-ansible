@@ -9,7 +9,7 @@
 # JSON
 # - debug: msg="{{ cod_release.tag }}"
 
-- name: Download & Extract COD Tgz
+- name: Download & Extract COD Tgz #noqa 503
   unarchive:
     src: "https://github.com/dim-an/cod/releases/download/{{ cod_release.tag }}/cod-Linux.tgz"
     dest: /usr/local/bin
