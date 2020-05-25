@@ -30,6 +30,7 @@
       - cheat
       - telegram-desktop
       - ktouch
+      - drawio
 
 - name: Install Classic Snap Packages
   snap:
