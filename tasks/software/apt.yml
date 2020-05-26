@@ -97,6 +97,8 @@
       - piper
       - profile-sync-daemon
       - bat
+      - seahorse
+      - mcomix
 
 - name: Autoremove and Purge APT Packages
   apt:
