@@ -18,3 +18,5 @@
     # - include: tasks/ansible/sudoers.yml
     #  - include: tasks/system/services.yml
     # - include: tasks/user/general-user-settings.yml
+    # - include: tasks/user/shuffler.yml
+    # - include: tasks/user/wallstreet.yml
