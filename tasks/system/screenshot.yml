@@ -1,6 +1,6 @@
 - name: Placing Screenshot Script
   copy:
-    src: files/scripts/gnome-screenshot
+    src: files/cfg/usr/bin/gnome-screenshot
     dest: "/usr/bin/gnome-screenshot"
     owner: "root"
     group: "root"

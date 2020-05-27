@@ -1,78 +1,78 @@
 - name: Placing .gitconfig dotfile
   copy:
-    src: files/dotfiles/git/.gitconfig
-    dest: "/home/{{ myusername }}/.gitconfig"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    src: files/cfg/home/.gitconfig
+    dest: "/home/{{ my_username }}/.gitconfig"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0700
 
 - name: Placing .gitignore dotfile
   copy:
-    src: files/dotfiles/git/.gitignore
-    dest: "/home/{{ myusername }}/.gitignore"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    src: files/cfg/home/.gitignore
+    dest: "/home/{{ my_username }}/.gitignore"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0700
 
 - name: Placing Uncrustify CFG
   copy:
-    src: files/dotfiles/uncrustify/uncrustify.cfg
-    dest: "/home/{{ myusername }}/.config/uncrustify.cfg"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    src: files/cfg/home/.config/uncrustify.cfg
+    dest: "/home/{{ my_username }}/.config/uncrustify.cfg"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0700
 
 - name: Placing Ncspot CFG
   copy:
-    src: files/dotfiles/ncspot/config.toml
-    dest: "/home/{{ myusername }}/snap/ncspot/current/.config/ncspot/config.toml"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    src: files/cfg/home/snap/ncspot/current/.config/ncspot/config.toml
+    dest: "/home/{{ my_username }}/snap/ncspot/current/.config/ncspot/config.toml"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0700
 
 - name: Placing .sbuildrc
   copy:
-    src: files/dotfiles/sbuild/.sbuildrc
-    dest: "/home/{{ myusername }}/.sbuildrc"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    src: files/cfg/home/.sbuildrc
+    dest: "/home/{{ my_username }}/.sbuildrc"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0700
 
 - name: Placing .mk-sbuild.rc
   copy:
-    src: files/dotfiles/sbuild/.mk-sbuild.rc
-    dest: "/home/{{ myusername }}/.mk-sbuild.rc"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    src: files/cfg/home/.mk-sbuild.rc
+    dest: "/home/{{ my_username }}/.mk-sbuild.rc"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0700
 
 - name: Placing .quiltrc
   copy:
-    src: files/dotfiles/quilt/.quiltrc
-    dest: "/home/{{ myusername }}/.quiltrc"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    src: files/cfg/home/.quiltrc
+    dest: "/home/{{ my_username }}/.quiltrc"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0700
 
-- name: Placing nord.json tilix Theme
+- name: Placing popos.json tilix Theme
   copy:
-    src: files/dotfiles/tilix/nord.json
-    dest: "/usr/share/tilix/schemes/nord.json"
+    src: files/cfg/usr/share/tilix/schemes/popos.json
+    dest: "/usr/share/tilix/schemes/popos.json"
     owner: "root"
     group: "root"
     mode: 0644
 
 - name: Placing Clockworks config
   copy:
-    src: files/dotfiles/clockworks/clockdata
-    dest: "/home/{{ myusername }}/.config/budgie-extras/clockworks/clockdata"
+    src: files/cfg/home/.config/budgie-extras/clockworks/clockdata
+    dest: "/home/{{ my_username }}/.config/budgie-extras/clockworks/clockdata"
     owner: "root"
     group: "root"
     mode: 0644
 
 - name: Placing panel.ini
   copy:
-    src: files/dotfiles/budgie/panel.ini
+    src: files/cfg/etc/budgie-desktop/panel.ini
     dest: "/etc/budgie-desktop/panel.ini"
     owner: "root"
     group: "root"
@@ -80,23 +80,23 @@
 - name: Placing insync autostart
   copy:
     src: files/cfg/home/.config/autostart/insync.desktop
-    dest: "/home/{{ myusername }}/.config/autostart/insync.desktop"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    dest: "/home/{{ my_username }}/.config/autostart/insync.desktop"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0644
 
 - name: Placing seafile autostart
   copy:
     src: files/cfg/home/.config/autostart/seaf-cli.desktop
-    dest: "/home/{{ myusername }}/.config/autostart/seaf-cli.desktop"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    dest: "/home/{{ my_username }}/.config/autostart/seaf-cli.desktop"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0644
 
 - name: Placing brave profile-sync-daemon file
   copy:
     src: files/cfg/usr/share/psd/browsers/brave-browser
     dest: "/usr/share/psd/browsers/brave-browser"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0644

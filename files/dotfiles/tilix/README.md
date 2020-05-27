@@ -1,1 +1,0 @@
-This theme was pulled from https://github.com/arcticicestudio/nord-tilix
