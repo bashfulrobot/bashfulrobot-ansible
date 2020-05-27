@@ -1,4 +1,4 @@
-- name: Install Desktop APT Packages
+- name: Install Elementary SDK
   apt:
     name: "{{ packages }}"
   vars:
