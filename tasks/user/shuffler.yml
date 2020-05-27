@@ -1,0 +1,63 @@
+- name: Enable Shuffler
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/runshuffler"
+    value: "true"
+    state: present
+
+- name: Enable Shuffler GUI
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/runshufflergui"
+    value: "true"
+    state: present
+
+- name: Shuffler - Swap Windows
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/swapgeometry"
+    value: "true"
+    state: present
+
+- name: Shuffler - Enable Animation
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/softmove"
+    value: "true"
+    state: present
+
+- name: Shuffler - Set Margin Top
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/margintop"
+    value: "15"
+    state: present
+
+- name: Shuffler - Set Margin Bottom
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/marginbottom"
+    value: "15"
+    state: present
+
+- name: Shuffler - Set Margin Left
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/marginleft"
+    value: "15"
+    state: present
+
+- name: Shuffler - Set Margin Right
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/marginright"
+    value: "15"
+    state: present

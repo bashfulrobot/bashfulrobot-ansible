@@ -1,0 +1,63 @@
+- name: Enable Wallstreet
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/budgie-wallstreet/runwallstreet"
+    value: "true"
+    state: present
+
+- name: Wallstreet - Random Wallpaper
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/budgie-wallstreet/random"
+    value: "true"
+    state: present
+
+- name: Wallstreet - Sync to Lockscreen
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/budgie-wallstreet/lockscreensync"
+    value: "true"
+    state: present
+
+- name: Wallstreet - Use custom Wallpapers
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/budgie-wallstreet/wallpaperfolder"
+    value: "'/home/dustin/Pictures/Wallpapers'"
+    state: present
+
+- name: Wallstreet - Change Time
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/budgie-wallstreet/switchinterval"
+    value: "300"
+    state: present
+
+- name: Shuffler - Set Margin Bottom
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/marginbottom"
+    value: "15"
+    state: present
+
+- name: Shuffler - Set Margin Left
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/marginleft"
+    value: "15"
+    state: present
+
+- name: Shuffler - Set Margin Right
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/ubuntubudgie/windowshuffler/marginright"
+    value: "15"
+    state: present
