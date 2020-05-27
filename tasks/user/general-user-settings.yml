@@ -1,6 +1,6 @@
 - name: Enable Nightlight
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
       value: "true"
@@ -8,7 +8,7 @@
 
 - name: Changing Scroll Direction
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll"
       value: "false"
@@ -16,7 +16,7 @@
 
 - name: Set gtk-im-module
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/interface/gtk-im-module"
       value: "'gtk-im-context-simple'"
@@ -24,7 +24,7 @@
 
 - name: Set Screen Idle Time
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/session/idle-delay"
       value: "uint32 600"
@@ -32,7 +32,7 @@
 
 - name: Set Mouse Sensitivity
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/peripherals/mouse/speed"
       value: "0.50"
@@ -40,7 +40,7 @@
 
 - name: Allow Volume Over 100% in Raven
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/com/solus-project/budgie-raven/allow-volume-overdrive"
       value: "true"
@@ -48,7 +48,7 @@
 
 - name: Allow Volume Over 100% in Gnome
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/sound/allow-volume-above-100-percent"
       value: "true"
@@ -56,7 +56,7 @@
 
 - name: Showing Mic Input in Raven
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/com/solus-project/budgie-raven/show-mic-input-widget"
       value: "true"
@@ -64,7 +64,7 @@
 
 - name: Showing Sound Output in Raven
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/com/solus-project/budgie-raven/show-sound-output-widge]"
       value: "true"
@@ -72,7 +72,7 @@
 
 - name: Showing Calendar in Raven
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/com/solus-project/budgie-raven/show-calendar-widget"
       value: "false"
@@ -80,15 +80,39 @@
 
 - name: Showing Powerstrip in Raven
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/com/solus-project/budgie-raven/show-power-strip"
       value: "false"
       state: present
 
+- name: Showing Media Playback in Raven
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+      key: "/com/solus-project/budgie-raven/show-mpris-widget"
+      value: "true"
+      state: present
+
+- name: Set Font Antialiasing
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+      key: "/org/gnome/settings-daemon/plugins/xsettings/antialiasing"
+      value: "'rgba'"
+      state: present
+
+- name: Set Font Hinting
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+      key: "/org/gnome/settings-daemon/plugins/xsettings/hinting"
+      value: "'slight'"
+      state: present
+
 - name: Set New Windows to Center on Launch
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/com/solus-project/budgie-wm/center-windows"
       value: "true"
@@ -96,15 +120,15 @@
 
 - name: Set New Windows to Center on Launch (Gnome)
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
-      key: "/org/gnome/mutter/center-new-windows]"
+      key: "/org/gnome/mutter/center-new-windows"
       value: "true"
       state: present
 
 - name: Enable Nemo Desktop Grid
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/nemo/desktop/use-desktop-grid"
       value: "true"
@@ -112,7 +136,7 @@
 
 - name: Set the Number of Default Workspaces
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/org/gnome/desktop/wm/preferences/num-workspaces"
     value: "6"
@@ -120,7 +144,7 @@
 
 - name: Set panel width
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/com/solus-project/budgie-panel/panels/{{ PANEL_ID }}/size"
     value: "35"
@@ -128,8 +152,112 @@
 
 - name: Set panel location
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/com/solus-project/budgie-panel/panels/{{ PANEL_ID }}/location"
     value: "'bottom'"
+    state: present
+
+- name: Attach modal dialogs to windows
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/com/solus-project/budgie-wm/attach-modal-dialogs"
+    value: "true"
+    state: present
+
+- name: Attach modal dialogs to windows (gnome)
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/mutter/attach-modal-dialogs"
+    value: "true"
+    state: present
+
+- name: Auto Delete trash
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/privacy/remove-old-trash-files"
+    value: "true"
+    state: present
+
+- name: Auto Delete tmp files
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/privacy/remove-old-temp-files"
+    value: "true"
+    state: present
+
+- name: Retain Auto Delete Files For 30 Days
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/privacy/old-files-age"
+    value: "uint32 30"
+    state: present
+
+- name: Turn on Files History
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/privacy/remember-recent-files"
+    value: "true"
+    state: present
+
+- name: Keep Files History For 30 Days
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/privacy/recent-files-max-age"
+    value: "30"
+    state: present
+
+- name: Set Auto Lock Screen
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/screensaver/lock-enabled"
+    value: "true"
+    state: present
+
+- name: Lock Screen on Suspend
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/screensaver/ubuntu-lock-on-suspend"
+    value: "true"
+    state: present
+
+- name: Show Notifications on Lock Screen
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/notifications/show-in-lock-screen"
+    value: "true"
+    state: present
+
+- name: Never Prompt or Start Programs on Media Insertiion
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/media-handling/autorun-never"
+    value: "true"
+    state: present
+
+- name: Make the Cursor a Little Larger
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/interface/cursor-size"
+    value: "32"
+    state: present
+
+- name: Enable Locate Cursor
+  become: true
+  become_user: "{{ my_username }}"
+  dconf:
+    key: "/org/gnome/desktop/interface/locate-pointer"
+    value: "true"
     state: present

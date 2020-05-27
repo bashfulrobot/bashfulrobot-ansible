@@ -1,27 +1,27 @@
 - name: Copy Default Wallpaper
   copy:
         src: files/wallpapers/ubuntu_budgie_01.jpg
-        dest: "/home/{{ myusername }}/Pictures/wallpaper.jpg"
+        dest: "/home/{{ my_username }}/Pictures/wallpaper.jpg"
 
 - name: Set Wallpaper File Permissions
   file:
-        path: "/home/{{ myusername }}/Pictures/wallpaper.jpg"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        path: "/home/{{ my_username }}/Pictures/wallpaper.jpg"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
         mode: 0775
 
 - name: Set Default Wallpaper
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
         key: "/org/gnome/desktop/background/picture-uri"
-        value: "'file:///home/{{ myusername }}/Pictures/wallpaper.jpg'"
+        value: "'file:///home/{{ my_username }}/Pictures/wallpaper.jpg'"
         state: present
 
 - name: Set Default Lockscreen Wallpaper
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
         key: "/org/gnome/desktop/screensaver/picture-uri"
-        value: "'file:///home/{{ myusername }}/Pictures/wallpaper.jpg'"
+        value: "'file:///home/{{ my_username }}/Pictures/wallpaper.jpg'"
         state: present

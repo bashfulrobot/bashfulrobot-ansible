@@ -7,8 +7,8 @@
 
 - name: Install GH SSH Pub keys
   authorized_key:
-    user: "{{ myusername }}"
+    user: "{{ my_username }}"
     state: present
     key: https://github.com/{{ item }}.keys
   with_items:
-    - bashfulrobot
+    - "{{ my_github_username }}"

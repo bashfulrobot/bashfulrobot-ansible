@@ -1,9 +1,9 @@
 # Sanity Home Permissions
 # - name: Fix 'home' permissions
 #   file:
-#     path: "/home/{{ myusername }}"
-#     owner: "{{ myusername }}"
-#     group: "{{ myusername }}"
+#     path: "/home/{{ my_username }}"
+#     owner: "{{ my_username }}"
+#     group: "{{ my_username }}"
 #     mode: 0700
 #     state: directory
 #     recurse: no
@@ -12,9 +12,9 @@
 # out how to exclude the snap dir
 # - name: Fix 'home' subfolder permissions
 #   file:
-#     path: "/home/{{ myusername }}/{{ item }}"
-#     owner: "{{ myusername }}"
-#     group: "{{ myusername }}"
+#     path: "/home/{{ my_username }}/{{ item }}"
+#     owner: "{{ my_username }}"
+#     group: "{{ my_username }}"
 #     mode: 0700
 #     state: directory
 #     recurse: yes
@@ -62,15 +62,15 @@
 - name: Fixing SSH PRIV Key Permissions
   become: yes
   file:
-    path: "/home/{{ myusername }}/.ssh/id_rsa"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    path: "/home/{{ my_username }}/.ssh/id_rsa"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0600
 
 - name: Fixing SSH PUB Key Permissions
   become: yes
   file:
-    path: "/home/{{ myusername }}/.ssh/id_rsa.pub"
-    owner: "{{  myusername }}"
-    group: "{{ myusername }}"
+    path: "/home/{{ my_username }}/.ssh/id_rsa.pub"
+    owner: "{{  my_username }}"
+    group: "{{ my_username }}"
     mode: 0600

@@ -17,7 +17,7 @@
 
 - name: Set Window Tile Font
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/wm/preferences/titlebar-font"
       value: "'Fira Sans Semi-Bold 10'"
@@ -25,7 +25,7 @@
 
 - name: Set Documents Font
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/interface/document-font-name"
       value: "'Roboto Slab 11'"
@@ -33,7 +33,7 @@
 
 - name: Set Interface Font
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/interface/font-name"
       value: "'Fira Sans Semi-Light 10'"
@@ -41,7 +41,7 @@
 
 - name: Set Monospace Font
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/interface/monospace-font-name"
       value: "'Fira Mono 11'"

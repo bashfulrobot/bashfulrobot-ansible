@@ -11,14 +11,14 @@
 
 - name: Change current user shell
   user:
-        name: "{{ myusername }}"
+        name: "{{ my_username }}"
         shell: /usr/bin/zsh
   become: yes
 
 - name: Clone oh-my-zsh #noqa 401
   git:
         repo: https://github.com/robbyrussell/oh-my-zsh.git
-        dest: /home/{{ myusername }}/.oh-my-zsh
+        dest: /home/{{ my_username }}/.oh-my-zsh
         update: no
   become: no
   register: omz_clone
@@ -26,125 +26,125 @@
 - name: Clone zsh-autosuggestions #noqa 401
   git:
         repo: https://github.com/zsh-users/zsh-autosuggestions.git
-        dest: /home/{{ myusername }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+        dest: /home/{{ my_username }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
         update: yes
 
 - name: Clone zsh-history-substring-search #noqa 401
   git:
         repo: https://github.com/zsh-users/zsh-history-substring-search.git
-        dest: /home/{{ myusername }}/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+        dest: /home/{{ my_username }}/.oh-my-zsh/custom/plugins/zsh-history-substring-search
         update: yes
 
 - name: Clone zsh-syntax-highlighting #noqa 401
   git:
         repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
-        dest: /home/{{ myusername }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+        dest: /home/{{ my_username }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
         update: yes
 
 - name: Clone powerlevel10k Theme #noqa 401
   git:
         repo: https://github.com/romkatv/powerlevel10k.git
-        dest: /home/{{ myusername }}/.oh-my-zsh/custom/themes/powerlevel10k
+        dest: /home/{{ my_username }}/.oh-my-zsh/custom/themes/powerlevel10k
         update: yes
 
 - name: Clone zsh-z #noqa 401
   git:
         repo: https://github.com/agkozak/zsh-z.git
-        dest: /home/{{ myusername }}/.oh-my-zsh/custom/plugins/zsh-z
+        dest: /home/{{ my_username }}/.oh-my-zsh/custom/plugins/zsh-z
         update: yes
 
 - name: check if .zshrc exists
   when: install_zsh is success
   stat:
-        path: /home/{{ myusername }}/.zshrc
+        path: /home/{{ my_username }}/.zshrc
   register: zshrc
 
 - name: back up existing .zshrc file if it exists
   when: zshrc.stat.exists
   copy:
-        src: /home/{{ myusername }}/.zshrc
-        dest: /home/{{ myusername }}/.zshrc-orig
+        src: /home/{{ my_username }}/.zshrc
+        dest: /home/{{ my_username }}/.zshrc-orig
 
 - name: Creating new ~/.zshrc
   copy:
-        src: /home/{{ myusername }}/.oh-my-zsh/templates/zshrc.zsh-template
-        dest: /home/{{ myusername }}/.zshrc
+        src: /home/{{ my_username }}/.oh-my-zsh/templates/zshrc.zsh-template
+        dest: /home/{{ my_username }}/.zshrc
   when: omz_clone is success
   become: no
   register: created_zshrc
 
 - name: Enable 10k theme in ZSH
   lineinfile:
-        path: /home/{{ myusername }}/.zshrc
+        path: /home/{{ my_username }}/.zshrc
         regexp: "^ZSH_THEME="
         line: "ZSH_THEME='powerlevel10k/powerlevel10k'"
 
 - name: Placing general.zsh CFG
   copy:
-        src: files/dotfiles/zsh/general.zsh
-        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/general.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/general.zsh
+        dest: "/home/{{ my_username }}/.oh-my-zsh/custom/general.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
 
 - name: Placing plugins.zsh CFG
   copy:
-        src: files/dotfiles/zsh/plugins.zsh
-        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/plugins.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/plugins.zsh
+        dest: "/home/{{ my_username }}/.oh-my-zsh/custom/plugins.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
 
 - name: Placing aliases.zsh CFG
   copy:
-        src: files/dotfiles/zsh/aliases.zsh
-        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/aliases.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/aliases.zsh
+        dest: "/home/{{ my_username }}/.oh-my-zsh/custom/aliases.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
 
 - name: Placing functions.zsh CFG
   copy:
-        src: files/dotfiles/zsh/functions.zsh
-        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/functions.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/functions.zsh
+        dest: "/home/{{ my_username }}/.oh-my-zsh/custom/functions.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
 
 - name: Placing path.zsh CFG
   copy:
-        src: files/dotfiles/zsh/path.zsh
-        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/path.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/path.zsh
+        dest: "/home/{{ my_username }}/.oh-my-zsh/custom/path.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
 
 - name: Placing util-functions.zsh CFG
   copy:
-        src: files/dotfiles/zsh/util-functions.zsh
-        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/util-functions.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/util-functions.zsh
+        dest: "/home/{{ my_username }}/.oh-my-zsh/custom/util-functions.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
 
 - name: Placing prompt.zsh CFG
   copy:
-        src: files/dotfiles/zsh/prompt.zsh
-        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/prompt.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/prompt.zsh
+        dest: "/home/{{ my_username }}/.oh-my-zsh/custom/prompt.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
 
 - name: Placing .p10k.zsh CFG
   copy:
-        src: files/dotfiles/zsh/.p10k.zsh
-        dest: "/home/{{ myusername }}/.p10k.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/.p10k.zsh
+        dest: "/home/{{ my_username }}/.p10k.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
 
 - name: Placing cheatsheets.zsh CFG
   copy:
-        src: files/dotfiles/zsh/cheatsheets.zsh
-        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/cheatsheets.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/cheatsheets.zsh
+        dest: "/home/{{ my_username }}/.oh-my-zsh/custom/cheatsheets.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"
 
 - name: Placing aws-cli.zsh CFG
   copy:
-        src: files/dotfiles/zsh/aws-cli.zsh
-        dest: "/home/{{ myusername }}/.oh-my-zsh/custom/aws-cli.zsh"
-        owner: "{{ myusername }}"
-        group: "{{ myusername }}"
+        src: files/cfg/home/.oh-my-zsh/custom/aws-cli.zsh
+        dest: "/home/{{ my_username }}/.oh-my-zsh/custom/aws-cli.zsh"
+        owner: "{{ my_username }}"
+        group: "{{ my_username }}"

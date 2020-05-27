@@ -1,9 +1,7 @@
 - hosts: localhost
   become: true
-  vars:
-    myusername: dustin
-    myhome: /home/dustin
-    xmind_version: 10.1.2-202004142327
+  vars_files:
+    - config.yml
   pre_tasks:
     - name: Update Repositories
       apt: update_cache=yes
@@ -43,6 +41,8 @@
     - include: tasks/user/shell.yml
     - include: tasks/user/shortcuts.yml
     - include: tasks/user/general-user-settings.yml
+    - include: tasks/user/shuffler.yml
+    - include: tasks/user/wallstreet.yml
 
     # - include: tasks/user/scripts.yml
     - include: tasks/user/permissions.yml

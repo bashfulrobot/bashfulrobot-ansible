@@ -1,19 +1,19 @@
 - name: Create User Ansible CFG Directory
   become: yes
   file:
-    path: "/home/{{ myusername }}/.ansible/"
+    path: "/home/{{ my_username }}/.ansible/"
     state: directory
     recurse: yes
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0700
 - name: Copy Default User Ansible CFG
   copy:
     src: files/.ansible.cfg
-    dest: "/home/{{ myusername }}/.ansible/.ansible.cfg"
+    dest: "/home/{{ my_username }}/.ansible/.ansible.cfg"
 - name: Set Default User Ansible CFG Permissions
   file:
-    path: "/home/{{ myusername }}/.ansible/.ansible.cfg"
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    path: "/home/{{ my_username }}/.ansible/.ansible.cfg"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
     mode: 0700

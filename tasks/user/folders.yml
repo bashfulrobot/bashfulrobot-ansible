@@ -3,16 +3,17 @@
     path: "{{ item }}"
     state: directory
     mode: '0755'
-    owner: "{{ myusername }}"
-    group: "{{ myusername }}"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
   with_items:
-    - "/home/{{ myusername }}/ubuntu/scratch"
-    - "/home/{{ myusername }}/tmp"
-    - "/home/{{ myusername }}/sync/gdrive-br"
-    - "/home/{{ myusername }}/private"
-    - "/home/{{ myusername }}/.config/ncspot"
-    - "/home/{{ myusername }}/snap/ncspot/current/.config/ncspot/"
-    - "/home/{{ myusername }}/.config/budgie-extras/clockworks/"
+    - "/home/{{ my_username }}/ubuntu/scratch"
+    - "/home/{{ my_username }}/tmp"
+    - "/home/{{ my_username }}/sync/gdrive-br"
+    - "/home/{{ my_username }}/sync/gdrive-telus"
+    - "/home/{{ my_username }}/sync/telus-shared"
+    - "/home/{{ my_username }}/private"
+    - "/home/{{ my_username }}/snap/ncspot/current/.config/ncspot/"
+    - "/home/{{ my_username }}/.config/budgie-extras/clockworks/"
 
 - name: Create /etc/budgie-desktop directory if it does not exist
   file:

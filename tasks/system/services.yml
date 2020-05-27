@@ -8,12 +8,12 @@
       - docker
 
 # - name: Enable Systemd User Scoped Services
-#   command: systemctl enable "{{item}}"@"{{ myusername }}"
+#   command: systemctl enable "{{item}}"@"{{ my_username }}"
 #   with_items:
 #       - syncthing
 
 # - name: Start Systemd User Scoped Services
-#   command: systemctl start "{{item}}"@"{{ myusername }}"
+#   command: systemctl start "{{item}}"@"{{ my_username }}"
 #   with_items:
 #       - syncthing
 
@@ -25,6 +25,6 @@
     state: started
     name: "{{ item }}"
   with_items:
-      - "syncthing@{{ myusername }}"
+      - "syncthing@{{ my_username }}"
 
 # - debug: msg="{{ result }}"

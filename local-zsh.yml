@@ -1,8 +1,7 @@
 - hosts: localhost
   become: true
-  vars:
-    myusername: dustin
-    myhome: /home/dustin
+  vars_files:
+    - config.yml
   pre_tasks:
     - name: Update Repositories
       apt: update_cache=yes

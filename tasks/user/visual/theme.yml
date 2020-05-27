@@ -1,15 +1,15 @@
 ## Theme
 - name: Set Cursor Theme
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/org/gnome/desktop/interface/cursor-theme"
-    value: "'DMZ-White'"
+    value: "'Pop'"
     state: present
 
 - name: Set System Theme
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/org/gnome/desktop/interface/gtk-theme"
     # Needed extra quotes due to unlnown key error
@@ -18,7 +18,7 @@
 
 - name: Set Icon Theme
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/org/gnome/desktop/interface/icon-theme"
     value: "'Pop'"
@@ -26,10 +26,10 @@
 
 - name: Set Theme to Dark
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/com/solus-project/budgie-panel/dark-theme"
-    value: "true"
+    value: "false"
     state: present
 
 ## Window Controls
@@ -38,7 +38,7 @@
 
 - name: Set Window Controls Button Layout
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/com/solus-project/budgie-wm/button-layout"
     value: "'close,minimize,maximize:appmenu'"
@@ -46,7 +46,7 @@
 
 - name: Set Window Controls Button Style
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/com/solus-project/budgie-wm/button-style"
     value: "'right'"

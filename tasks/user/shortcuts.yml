@@ -2,7 +2,7 @@
 
 - name: Set Remove Super Space Defaults
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/wm/keybindings/switch-input-source"
       value: "['<Primary><Shift><Alt><Super>space']"
@@ -10,7 +10,7 @@
 
 - name: Set Remove Super Space Defaults
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/wm/keybindings/switch-input-source-backward"
       value: "['<Primary><Alt><Super>space']"
@@ -18,7 +18,7 @@
 
 - name: Changing IBUS Emjoi Keyboard Shortcut
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/desktop/ibus/panel/emoji/hotkey"
       value: "['<Control><Alt><Shift>e']"
@@ -26,7 +26,7 @@
 
 - name: Changing Terminal Keyboard Shortcut
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/settings-daemon/plugins/media-keys/terminal"
       value: "['<Super>Return']"
@@ -34,7 +34,7 @@
 
 - name: Changing Close Application Keyboard Shortcut
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/wm/keybindings/close"
       value: "['<Super>q']"
@@ -42,7 +42,7 @@
 
 - name: Changing Run Application Keyboard Shortcut
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
       key: "/org/gnome/desktop/wm/keybindings/panel-run-dialog"
       value: "['<Super>space']"

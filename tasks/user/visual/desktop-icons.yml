@@ -2,7 +2,7 @@
 
 - name: Add Trash Icon to the Desktop
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/org/nemo/desktop/trash-icon-visible"
     value: "true"
@@ -10,7 +10,7 @@
 
 - name: Add Mounted Volume Icon to the Desktop
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/org/nemo/desktop/volumes-visible"
     value: "true"
@@ -18,7 +18,7 @@
 
 - name: Add Home Folder Icon to the Desktop
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/org/nemo/desktop/home-icon-visible"
     value: "true"
@@ -26,7 +26,7 @@
 
 - name: Add Network Icons to the Desktop
   become: true
-  become_user: "{{ myusername }}"
+  become_user: "{{ my_username }}"
   dconf:
     key: "/org/nemo/desktop/network-icon-visible"
     value: "false"
