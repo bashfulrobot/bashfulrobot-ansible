@@ -1,6 +1,6 @@
 - name: Placing ansible-pull-cron.sh
   copy:
-    src: files/scripts/ansible-pull-cron.sh
+    src: files/cfg/usr/local/bin/ansible-pull-cron.sh
     dest: "/usr/local/bin/ansible-pull-cron.sh"
     owner: root
     group: root
@@ -14,14 +14,14 @@
 
 - name: Add Ansible Cron Log
   file:
-      path: /home/{{ myusername }}/.ansible-cron
+      path: /home/{{ my_username }}/.ansible-cron
       state: touch
       owner: root
       group: root
       mode: 0700
 
 - name: Tap Ansible Cron Log #noqa 301
-  shell: date >> /home/{{ myusername }}/.ansible-cron
+  shell: date >> /home/{{ my_username }}/.ansible-cron
 
 - name: Rotate Ansible Cron Log #noqa 301
-  shell: tail -n5 /home/{{ myusername }}/.ansible-cron > /home/{{ myusername }}/.ansible-cron.tmp && mv /home/{{ myusername }}/.ansible-cron.tmp /home/{{ myusername }}/.ansible-cron #noqa 204
+  shell: tail -n5 /home/{{ my_username }}/.ansible-cron > /home/{{ my_username }}/.ansible-cron.tmp && mv /home/{{ my_username }}/.ansible-cron.tmp /home/{{ my_username }}/.ansible-cron #noqa 204
