@@ -31,6 +31,7 @@
       - telegram-desktop
       - ktouch
       - drawio
+      - auto-cpufreq
 
 - name: Install Classic Snap Packages
   snap:
