@@ -85,3 +85,13 @@ function gh-rate-limit() {
   checkInstalledApt curl
   curl -X GET https://api.github.com/rate_limit
 }
+
+bwcopy() {
+  checkInstalledApt fzf
+  checkInstalledApt jq
+  checkInstalledApt xclip
+
+  if hash bw 2>/dev/null; then
+    bw get item "$(bw list items | jq '.[] | "\(.name) | username: \(.login.username) | id: \(.id)" ' | fzf-tmux | awk '{print $(NF -0)}' | sed 's/\"//g')" | jq '.login.password' | sed 's/\"//g' | xclip -sel clip
+  fi
+}
