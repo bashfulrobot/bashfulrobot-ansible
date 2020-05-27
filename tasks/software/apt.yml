@@ -20,7 +20,7 @@
   vars:
     packages:
       - git
-      - inxi
+      # - inxi
       - audacity
       - peek
       - xclip
@@ -38,7 +38,7 @@
       - htop
       - celluloid
       - gnome-firmware
-      - drawing
+      # - drawing
       - calibre
       - whois
       - apt-transport-https
@@ -46,7 +46,7 @@
       - software-properties-common
       - python3-pip
       - snapd-xdg-open
-      - asciinema
+      # - asciinema
       - flameshot
       - python-psutil
       - psutils
@@ -69,26 +69,24 @@
       - libgtk-3-0
       - seafile-cli
       - dialog
-      - pdfarranger
-      - hub
-      - rename
+      # - pdfarranger
+      # - hub
+      # - rename
       - encfs
       - graphviz
       - budgie-applications-menu-applet
       - budgie-window-shuffler
+      - budgie-clockworks-applet
       - pulseaudio
       - pavucontrol
       - nordvpn
       - gocryptfs
       - sirikali
-      # - insync
-      # - insync-nemo
+      - insync
+      - insync-nemo
       - preload
       - jq
-      - gnome-documents
       - brave-browser
-      - budgie-clockworks-applet
-      - typora
       - tailscale
       - syncthing
       - dh-make
@@ -98,7 +96,8 @@
       - bat
       - seahorse
       - mcomix
-      - devilspie2
+      - powertop
+      # - devilspie2
 
 - name: Autoremove and Purge APT Packages
   apt:

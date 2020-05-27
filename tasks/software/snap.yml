@@ -25,11 +25,9 @@
       - htmldoc
       - libreoffice
       # - ephemeral
-      # - glimpse-editor
-      # - gravit-designer
+      - glimpse-editor
       - cheat
       - telegram-desktop
-      - ktouch
       - drawio
       - auto-cpufreq
 
