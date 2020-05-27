@@ -32,7 +32,6 @@
     - include: tasks/system/services.yml
     - include: tasks/system/timezone.yml
     - include: tasks/system/ufw.yml
-      #- include: tasks/system/cpu.yml
     - include: tasks/system/screenshot.yml
       #- include: tasks/system/dns.yml
     # User Settings
