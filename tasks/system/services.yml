@@ -1,3 +1,11 @@
+- name: Placing Powertop Unit File
+  copy:
+    src: files/cfg/etc/systemd/system/powertop.service
+    dest: "/etc/systemd/system/powertop.service"
+    owner: "root"
+    group: "root"
+    mode: 0644
+
 - name: Enable and Start System Scoped Services
   systemd:
     enabled: yes
@@ -6,6 +14,7 @@
   with_items:
       - ssh
       - docker
+      - powertop
 
 # - name: Enable Systemd User Scoped Services
 #   command: systemctl enable "{{item}}"@"{{ my_username }}"
