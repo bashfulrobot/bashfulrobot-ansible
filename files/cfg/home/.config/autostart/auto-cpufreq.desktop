@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Auto-cpufreq
+GenericName=Auto-cpufreq
+Comment=Launch Insync
+Icon=preferences-system-power
+Categories=Network;
+Exec=sudo auto-cpufreq start
+TryExec=auto-cpufreq
+Terminal=false
+X-GNOME-Autostart-Delay=3

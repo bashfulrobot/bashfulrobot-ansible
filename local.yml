@@ -10,7 +10,7 @@
     # Update entire system
     - include: tasks/software/update-system.yml
     # Ansible Settings
-    - include: tasks/ansible/sudoers.yml
+    - include: tasks/sudo/sudoers.yml
 
     # Software Settings
     - include: tasks/software/pop-theme.yml
@@ -37,6 +37,7 @@
     - include: tasks/user/users.yml
     - include: tasks/user/folders.yml
     - include: tasks/user/dotfiles.yml
+    - include: tasks/user/startup-items/startup.yml
     - include: tasks/user/cron.yml
     - include: tasks/user/shell.yml
     - include: tasks/user/shortcuts.yml

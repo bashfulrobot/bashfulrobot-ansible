@@ -1,0 +1,29 @@
+- name: Add ansible-pull Sudoer File
+  file:
+      path: /etc/sudoers.d/ansible_pull
+      state: touch
+      owner: root
+      group: root
+      mode: 0440
+
+- name: Allow ansible-pull With No Password
+  lineinfile:
+      path: /etc/sudoers.d/ansible_pull
+      line: "dustin ALL=(ALL) NOPASSWD: /usr/bin/ansible-pull"
+      # state: present
+      validate: "/usr/sbin/visudo -cf %s"
+
+- name: Add auto-cpufreq Sudoer File
+  file:
+      path: /etc/sudoers.d/auto_cpu_freq
+      state: touch
+      owner: root
+      group: root
+      mode: 0440
+
+- name: Allow auto-cpufreq With No Password
+  lineinfile:
+      path: /etc/sudoers.d/auto_cpu_freq
+      line: "dustin ALL=(ALL) NOPASSWD: /snap/bin/auto-cpufreq"
+      # state: present
+      validate: "/usr/sbin/visudo -cf %s"
