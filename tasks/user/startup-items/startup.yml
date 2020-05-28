@@ -24,7 +24,8 @@
   when:
   # Each line is treated as "AND"
     - ansible_distribution == "Ubuntu"
-    - inventory_hostname == "{{ laptop_hostname }}"
+    # Variables use no {{}} or quotes in conditionals
+    - ansible_hostname == laptop_hostname
 
 - name: Placing xbanish autostart
   copy:
