@@ -14,13 +14,17 @@
     group: "{{ my_username }}"
     mode: 0644
 
-- name: Placing auto-cpufreq autostart
+- name: Placing auto-cpufreq autostart on Laptop
   copy:
     src: files/cfg/home/.config/autostart/auto-cpufreq.desktop
     dest: "/home/{{ my_username }}/.config/autostart/auto-cpufreq.desktop"
     owner: "{{ my_username }}"
     group: "{{ my_username }}"
     mode: 0644
+  when:
+  # Each line is treated as "AND"
+    - ansible_distribution == "Ubuntu"
+    - inventory_hostname == "{{ laptop_hostname }}"
 
 - name: Placing xbanish autostart
   copy:

@@ -29,7 +29,6 @@
       - cheat
       - telegram-desktop
       - drawio
-      - auto-cpufreq
 
 - name: Install Classic Snap Packages
   snap:
@@ -86,3 +85,12 @@
   snap:
     name: hugo
     channel: extended/edge
+
+- name: Install Laptop Snaps
+  snap:
+    name:
+      - auto-cpufreq
+  when:
+    # Each line is treated as "AND"
+      - ansible_distribution == "Ubuntu"
+      - inventory_hostname == "{{ laptop_hostname }}"
