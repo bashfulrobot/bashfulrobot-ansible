@@ -80,7 +80,7 @@ function cfg-local-apply() {
   cd $MYREPO
   # $GIT pull
 
-  $ANSIBLE --extra-vars "PANEL_ID=$(getPanelId)" $MYREPO/local.yml --connection=local
+  $ANSIBLE --extra-vars "PANEL_ID=$ID" $MYREPO/local.yml --connection=local
 }
 
 function cfg-update() {
@@ -95,7 +95,7 @@ function cfg-update() {
   cd $MYREPO
   $GIT pull
 
-  $ANSIBLE --extra-vars "PANEL_ID=$(getPanelId)" $MYREPO/local.yml --connection=local
+  $ANSIBLE --extra-vars "PANEL_ID=$ID" $MYREPO/local.yml --connection=local
 }
 
 function rename-pad-num() {
