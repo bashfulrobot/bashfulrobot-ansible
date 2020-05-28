@@ -61,7 +61,7 @@ function br-clone() {
   echo
 }
 
-function cfg-pull() {
+function cfg-update-pull() {
   ID=$(dconf dump /com/solus-project/budgie-panel/panels/ | grep { | cut -d '[' -f2 | cut -d ']' -f1)
   APULL=$(which ansible-pull)
   MYREPORMT="https://github.com/bashfulrobot/bashfulrobot-ansible.git"
@@ -83,6 +83,20 @@ function cfg-local-apply() {
   $ANSIBLE --extra-vars "PANEL_ID=$(getPanelId)" $MYREPO/local.yml --connection=local
 }
 
+function cfg-update() {
+
+  ID=$(dconf dump /com/solus-project/budgie-panel/panels/ | grep { | cut -d '[' -f2 | cut -d ']' -f1)
+
+  ANSIBLE=$(which ansible-playbook)
+  GIT=$(which git)
+  MYLOCBASE="$HOME/tmp"
+  MYREPO="$MYLOCBASE/bashfulrobot-ansible"
+
+  cd $MYREPO
+  $GIT pull
+
+  $ANSIBLE --extra-vars "PANEL_ID=$(getPanelId)" $MYREPO/local.yml --connection=local
+}
 
 function rename-pad-num() {
   rename 's/\d+/sprintf("%04d",$&)/e' "$1"
