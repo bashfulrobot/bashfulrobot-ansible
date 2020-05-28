@@ -21,3 +21,11 @@
     owner: "{{ my_username }}"
     group: "{{ my_username }}"
     mode: 0644
+
+- name: Placing xbanish autostart
+  copy:
+    src: files/cfg/home/.config/autostart/xbanish.desktop
+    dest: "/home/{{ my_username }}/.config/autostart/xbanish.desktop"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
+    mode: 0644

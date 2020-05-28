@@ -110,3 +110,7 @@
 - name: Install Xmind .deb package.
   apt:
     deb: https://www.xmind.net/xmind/downloads/XMind-2020-for-Linux-amd-64bit-{{ xmind_version }}.deb
+
+- name: Install xbanish .deb package.
+  apt:
+    deb: https://launchpad.net/~minos-archive/+archive/ubuntu/main/+files/xbanish_202005040308+git46-minos~ubuntu20.04.1_amd64.deb

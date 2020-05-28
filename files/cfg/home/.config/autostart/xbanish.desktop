@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Xbanish
+GenericName=Xbanish
+Comment=Launch Xbanish
+Icon=preferences-desktop-mouse
+Exec=xbanish
+TryExec=xbanish
+X-GNOME-Autostart-Delay=3
