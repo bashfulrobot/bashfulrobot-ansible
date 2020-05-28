@@ -68,6 +68,22 @@ function cfg-pull() {
   $APULL --extra-vars "PANEL_ID=$ID" -U $MYREPORMT
 }
 
+function cfg-apply() {
+
+  ID=$(dconf dump /com/solus-project/budgie-panel/panels/ | grep { | cut -d '[' -f2 | cut -d ']' -f1)
+
+  ANSIBLE=$(which ansible-playbook)
+  GIT=$(which git)
+  MYLOCBASE="$HOME/tmp"
+  MYREPO="$MYLOCBASE/bashfulrobot-ansible"
+
+  cd $MYREPO
+  $GIT pull
+
+  $ANSIBLE --extra-vars "PANEL_ID=$(getPanelId)" $MYREPO/local.yml --connection=local
+}
+
+
 function rename-pad-num() {
   rename 's/\d+/sprintf("%04d",$&)/e' "$1"
 }
