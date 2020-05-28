@@ -77,22 +77,6 @@
     owner: "root"
     group: "root"
 
-- name: Placing insync autostart
-  copy:
-    src: files/cfg/home/.config/autostart/insync.desktop
-    dest: "/home/{{ my_username }}/.config/autostart/insync.desktop"
-    owner: "{{ my_username }}"
-    group: "{{ my_username }}"
-    mode: 0644
-
-- name: Placing seafile autostart
-  copy:
-    src: files/cfg/home/.config/autostart/seaf-cli.desktop
-    dest: "/home/{{ my_username }}/.config/autostart/seaf-cli.desktop"
-    owner: "{{ my_username }}"
-    group: "{{ my_username }}"
-    mode: 0644
-
 - name: Placing brave profile-sync-daemon file
   copy:
     src: files/cfg/usr/share/psd/browsers/brave-browser
