@@ -68,7 +68,7 @@ function cfg-pull() {
   $APULL --extra-vars "PANEL_ID=$ID" -U $MYREPORMT
 }
 
-function cfg-apply() {
+function cfg-local-apply() {
 
   ID=$(dconf dump /com/solus-project/budgie-panel/panels/ | grep { | cut -d '[' -f2 | cut -d ']' -f1)
 
