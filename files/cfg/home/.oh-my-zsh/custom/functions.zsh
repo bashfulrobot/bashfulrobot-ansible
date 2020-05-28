@@ -78,7 +78,7 @@ function cfg-apply() {
   MYREPO="$MYLOCBASE/bashfulrobot-ansible"
 
   cd $MYREPO
-  $GIT pull
+  # $GIT pull
 
   $ANSIBLE --extra-vars "PANEL_ID=$(getPanelId)" $MYREPO/local.yml --connection=local
 }
