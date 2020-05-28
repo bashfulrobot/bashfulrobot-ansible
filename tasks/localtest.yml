@@ -1,0 +1,3 @@
+
+# - debug: msg="{{ comicdl_release.tag }}"
+# - debug: msg="{{ ansible_hostname }}"

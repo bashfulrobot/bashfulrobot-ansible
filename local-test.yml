@@ -7,6 +7,7 @@
   #     apt: update_cache=yes
   #     changed_when: false
   tasks:
+    - include: tasks/localtest.yml
     # - include: tasks/user/users.yml
     # - include: tasks/user/shell.yml
     #- include: tasks/localtest.yml
