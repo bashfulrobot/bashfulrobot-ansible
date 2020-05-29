@@ -99,15 +99,3 @@
   apt:
     deb: https://github.com/johnfactotum/foliate/releases/download/{{ foliate_version }}/com.github.johnfactotum.foliate_{{ foliate_version }}_all.deb
   when: foliate_release.changed
-
-- name: Get latest release version of Espanso from GitHub
-  github_release:
-    user: federico-terzi
-    repo: espanso
-    action: latest_release
-  register: espanso_release
-
-- name: Install Espanso .deb package from Github.
-  apt:
-    deb: https://github.com/federico-terzi/espanso/releases/download/{{ espanso_release.tag }}/espanso-debian-amd64.deb
-  when: espanso_release.changed

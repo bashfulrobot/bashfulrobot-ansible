@@ -41,7 +41,7 @@
       - snapdiff
       - slack
       - code-insiders
-      # - espanso
+
       - kubectl
 
 - name: Install Node Snap Package --channel=11/stable --classic
@@ -68,10 +68,13 @@
 
 - name: Install Snap Packages --channel=edge --classic
   snap:
-    name: restic
+    name: "{{ edgeclassicsnaps }}"
     channel: edge
     classic: yes
-
+  vars:
+    edgeclassicsnaps:
+      - restic
+      - espanso
 
 # - name: Install Snap Packages from --channel=beta
 #   snap:
