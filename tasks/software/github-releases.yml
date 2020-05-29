@@ -32,7 +32,7 @@
     url: https://github.com/Girbons/comics-downloader/releases/download/{{ comicdl_release.tag }}/comics-downloader
     dest: /usr/local/bin/comics-downloader
     mode: '0755'
-  when: comicdl_release.changed
+  # when: comicdl_release.changed
 
 - name: Get latest release version of Terraform from GitHub
   github_release:
@@ -50,7 +50,7 @@
     src: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
     dest: /usr/local/bin
     remote_src: yes
-  when: terraform_release.changed
+  # when: terraform_release.changed
 
 - name: Get latest release version of Gh ClI from GitHub
   github_release:
@@ -66,7 +66,7 @@
 - name: Install GH CLI .deb package from Github.
   apt:
     deb: https://github.com/cli/cli/releases/download/{{ gh_cli_release.tag }}/gh_{{ gh_cli_version }}_linux_amd64.deb
-  when: gh_cli_release.changed
+  # when: gh_cli_release.changed
 
 - name: Get latest release version of Todoist from GitHub
   github_release:
@@ -82,7 +82,7 @@
 - name: Install Todoist .deb package from Github.
   apt:
     deb: https://github.com/KryDos/todoist-linux/releases/download/{{ todoist_version }}/Todoist_{{ todoist_version }}.0_amd64.deb
-  when: todoist_release.changed
+  # when: todoist_release.changed
 
 - name: Get latest release version of Foliate from GitHub
   github_release:
@@ -98,7 +98,7 @@
 - name: Install Foliate .deb package from Github.
   apt:
     deb: https://github.com/johnfactotum/foliate/releases/download/{{ foliate_version }}/com.github.johnfactotum.foliate_{{ foliate_version }}_all.deb
-  when: foliate_release.changed
+  # when: foliate_release.changed
 
 - name: Get latest release version of Espanso from GitHub
   github_release:
@@ -110,4 +110,4 @@
 - name: Install Espanso .deb package from Github.
   apt:
     deb: https://github.com/federico-terzi/espanso/releases/download/{{ espanso_release.tag }}/espanso-debian-amd64.deb
-  when: espanso_release.changed
+  # when: espanso_release.changed
