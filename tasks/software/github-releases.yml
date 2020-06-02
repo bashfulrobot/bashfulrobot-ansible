@@ -83,19 +83,3 @@
   apt:
     deb: https://github.com/KryDos/todoist-linux/releases/download/{{ todoist_version }}/Todoist_{{ todoist_version }}.0_amd64.deb
   # when: todoist_release.changed
-
-- name: Get latest release version of Foliate from GitHub
-  github_release:
-    user: johnfactotum
-    repo: foliate
-    action: latest_release
-  register: foliate_release
-
-- name: Get Foliate version number w/o V
-  set_fact:
-    foliate_version: "{{ foliate_release.tag | regex_replace('^v', '') }}"
-
-- name: Install Foliate .deb package from Github.
-  apt:
-    deb: https://github.com/johnfactotum/foliate/releases/download/{{ foliate_version }}/com.github.johnfactotum.foliate_{{ foliate_version }}_all.deb
-  when: foliate_release.changed

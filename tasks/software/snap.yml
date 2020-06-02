@@ -29,6 +29,7 @@
       - cheat
       - telegram-desktop
       - drawio
+      - foliate
 
 - name: Install Classic Snap Packages
   snap:
