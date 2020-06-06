@@ -54,6 +54,14 @@
     group: "{{ my_username }}"
     mode: 0700
 
+- name: Placing .vimrc
+  copy:
+    src: files/cfg/home/.vimrc
+    dest: "/home/{{ my_username }}/.vimrc"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
+    mode: 0700
+
 - name: Placing popos.json tilix Theme
   copy:
     src: files/cfg/usr/share/tilix/schemes/popos.json
