@@ -5,7 +5,8 @@
 
 alias pcp='rsync -aP'
 
-alias e='code-insiders -r'
+alias er='code-insiders -r'
+alias e='code-insiders'
 
 alias opermissions="stat -c '%A %a %n'"
 alias octperm="stat -c '%A %a %n'"
