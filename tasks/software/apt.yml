@@ -100,6 +100,8 @@
       - mcomix
       - powertop
       - firefox
+      - flatpak
+      - gnome-software-plugin-flatpak
       # - devilspie2
 
 - name: Autoremove and Purge APT Packages
