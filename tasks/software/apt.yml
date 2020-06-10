@@ -8,7 +8,6 @@
       - plank
       - geary
       - gnome-screenshot
-      - firefox
 
 - name: Autoremove and Purge APT Packages
   apt:
@@ -100,6 +99,7 @@
       - seahorse
       - mcomix
       - powertop
+      - firefox
       # - devilspie2
 
 - name: Autoremove and Purge APT Packages
