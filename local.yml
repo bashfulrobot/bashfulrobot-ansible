@@ -20,6 +20,7 @@
     - include: tasks/software/apt.yml
     - include: tasks/software/pip.yml
     - include: tasks/software/snap.yml
+    - include: tasks/software/flatpak.yml
     # This must come after the pip/yml due to dependencies
     - include: tasks/software/github-releases.yml
 

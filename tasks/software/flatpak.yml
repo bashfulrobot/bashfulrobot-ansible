@@ -1,0 +1,5 @@
+- name: Install the Feedreader flatpak from the flathub remote system-wide
+  flatpak:
+    name: org.gnome.FeedReader
+    state: present
+    remote: flathub
