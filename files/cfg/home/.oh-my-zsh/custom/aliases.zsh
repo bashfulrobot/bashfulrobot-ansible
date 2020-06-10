@@ -7,6 +7,7 @@ alias pcp='rsync -aP'
 
 alias er='code-insiders -r'
 alias e='code-insiders'
+alias e-root='code-insiders --user-data-dir="~/.vscode-insiders/"'
 
 alias opermissions="stat -c '%A %a %n'"
 alias octperm="stat -c '%A %a %n'"
