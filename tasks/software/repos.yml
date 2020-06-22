@@ -52,14 +52,13 @@
     repo: deb http://apt.insync.io/ubuntu {{ansible_distribution_release}} non-free contrib
     state: present
 
-- name: Add Brave APT signing Keys
+- name: Add Brave Nightly APT signing Keys
   apt_key:
-    url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
+    url: https://brave-browser-apt-nightly.s3.brave.com/brave-core-nightly.asc
     state: present
-
 - name: Add Brave Browser PPA
   apt_repository:
-    repo: deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
+    repo: deb [arch=amd64] https://brave-browser-apt-nightly.s3.brave.com/ stable main
     state: present
 
 - name: Add Tailscale APT signing Keys

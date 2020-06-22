@@ -92,3 +92,11 @@
     owner: "{{ my_username }}"
     group: "{{ my_username }}"
     mode: 0644
+
+- name: Placing brave nightly profile-sync-daemon file
+  copy:
+    src: files/cfg/usr/share/psd/browsers/brave-browser-nightly
+    dest: "/usr/share/psd/browsers/brave-browser-nightly"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
+    mode: 0644
