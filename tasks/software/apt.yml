@@ -96,7 +96,6 @@
       - powertop
       - flatpak
       - gnome-software-plugin-flatpak
-      - nordic
       # - devilspie2
 
 - name: Autoremove and Purge APT Packages
