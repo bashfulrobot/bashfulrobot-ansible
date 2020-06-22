@@ -7,10 +7,10 @@
     mode: 0755
 
 - name: Install Ansible Cron Job (40 Min)
-  cron: user="dustin" name="Ansible provision" minute="*/40" job="/usr/local/bin/ansible-pull-cron.shl"
+  cron: user="{{ my_username }}" name="Ansible provision" minute="*/40" job="/usr/local/bin/ansible-pull-cron.sh"
 
 - name: Install Daily Ansible Cron Jobs
-  cron: user="dustin" name="Ansible Daily provision" minute="30" hour="7,17" job="/usr/local/bin/ansible-pull-cron.sh"
+  cron: user="{{ my_username }}" name="Ansible Daily provision" minute="30" hour="7,17" job="/usr/local/bin/ansible-pull-cron.sh"
 
 - name: Add Ansible Cron Log
   file:

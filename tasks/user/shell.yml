@@ -15,7 +15,7 @@
         shell: /usr/bin/zsh
   become: yes
 
-- name: Clone oh-my-zsh #noqa 401
+- name: Clone oh-my-zsh
   git:
         repo: https://github.com/robbyrussell/oh-my-zsh.git
         dest: /home/{{ my_username }}/.oh-my-zsh
@@ -23,31 +23,31 @@
   become: no
   register: omz_clone
 
-- name: Clone zsh-autosuggestions #noqa 401
+- name: Clone zsh-autosuggestions
   git:
         repo: https://github.com/zsh-users/zsh-autosuggestions.git
         dest: /home/{{ my_username }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
         update: yes
 
-- name: Clone zsh-history-substring-search #noqa 401
+- name: Clone zsh-history-substring-search
   git:
         repo: https://github.com/zsh-users/zsh-history-substring-search.git
         dest: /home/{{ my_username }}/.oh-my-zsh/custom/plugins/zsh-history-substring-search
         update: yes
 
-- name: Clone zsh-syntax-highlighting #noqa 401
+- name: Clone zsh-syntax-highlighting
   git:
         repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
         dest: /home/{{ my_username }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
         update: yes
 
-- name: Clone powerlevel10k Theme #noqa 401
+- name: Clone powerlevel10k Theme
   git:
         repo: https://github.com/romkatv/powerlevel10k.git
         dest: /home/{{ my_username }}/.oh-my-zsh/custom/themes/powerlevel10k
         update: yes
 
-- name: Clone zsh-z #noqa 401
+- name: Clone zsh-z
   git:
         repo: https://github.com/agkozak/zsh-z.git
         dest: /home/{{ my_username }}/.oh-my-zsh/custom/plugins/zsh-z
@@ -130,7 +130,7 @@
 
 - name: Placing .p10k.zsh CFG
   copy:
-        src: files/cfg/home/.oh-my-zsh/custom/.p10k.zsh
+        src: files/cfg/home/.p10k.zsh
         dest: "/home/{{ my_username }}/.p10k.zsh"
         owner: "{{ my_username }}"
         group: "{{ my_username }}"
