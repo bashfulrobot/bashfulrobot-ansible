@@ -67,19 +67,3 @@
   apt:
     deb: https://github.com/cli/cli/releases/download/{{ gh_cli_release.tag }}/gh_{{ gh_cli_version }}_linux_amd64.deb
   # when: gh_cli_release.changed
-
-- name: Get latest release version of Todoist from GitHub
-  github_release:
-    user: KryDos
-    repo: todoist-linux
-    action: latest_release
-  register: todoist_release
-
-- name: Get Todoist version number w/o V
-  set_fact:
-    todoist_version: "{{ todoist_release.tag | regex_replace('^v', '') }}"
-
-- name: Install Todoist .deb package from Github.
-  apt:
-    deb: https://github.com/KryDos/todoist-linux/releases/download/{{ todoist_version }}/Todoist_{{ todoist_version }}.0_amd64.deb
-  # when: todoist_release.changed

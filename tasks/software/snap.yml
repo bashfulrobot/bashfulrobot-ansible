@@ -30,6 +30,7 @@
       - telegram-desktop
       - drawio
       - foliate
+      - todoist
 
 - name: Install Classic Snap Packages
   snap:
