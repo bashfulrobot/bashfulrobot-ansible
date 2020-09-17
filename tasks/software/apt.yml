@@ -96,6 +96,7 @@
       - powertop
       - flatpak
       - gnome-software-plugin-flatpak
+      - stacer
       # - devilspie2
 
 - name: Autoremove and Purge APT Packages
