@@ -31,6 +31,7 @@
       - drawio
       - foliate
       - todoist
+      - beekeeper-studio
 
 - name: Install Classic Snap Packages
   snap:
